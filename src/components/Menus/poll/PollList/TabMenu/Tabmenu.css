@@ -1,0 +1,14 @@
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.tab-menu {padding:0 30px; border-bottom:1px solid #e8e8e8; background:#fff; display: flex;}
+.tab-menu li {position:relative; float:left; margin-left:60px;}
+.tab-menu li:before {position:absolute; left:-30px; top:50%; transform:translateY(-50%); width:1px; height:20px; background:#e8e8e8; content:'';}
+.tab-menu li:first-child {margin-left:0;}
+.tab-menu li:first-child:before {content:'';}
+.tab-menu li a {display:inline-block; line-height:60px; transition:all 0.5s; cursor: pointer;}
+.tab-menu li a:before {position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:3px; background:#cf7afe; transition:all 0.5s; content:'';}
+.tab-menu li:hover a, .tab-menu li.on a {color:#cf7afe;}
+.tab-menu li:hover a:before, .tab-menu li.on a:before {width:100%;}

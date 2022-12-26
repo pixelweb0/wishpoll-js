@@ -1,0 +1,34 @@
+input[type=tel][readonly], input[type=text][readonly],
+input[type=password][readonly], input[type=email][readonly],
+input[type=search][readonly], input[type=tel][disabled], input[type=text][disabled],
+input[type=password][disabled], input[type=search][disabled], input[type=email][disabled] {
+    background: #eaeaea;
+    border-color: #c0c0c0;
+    color: #666;
+}
+
+.contents { position: relative; padding: 30px;}
+.contents > .history-m_h { position: relative; width: 75%; font-family: 'scdream7'; font-size: 1.375rem; margin-bottom: 20px;}
+
+#history-m_write { overflow: hidden;}
+#history-m_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
+#history-m_write .item .title { position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+
+#history-m_write .item .desc { font-family: 'scdream3'; font-size: 0.875rem; padding: 20px 30px;}
+
+#history-m_write .item .desc select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff;}
+#history-m_write .item .desc option { font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+
+#history-m_write .item .desc input[type=file] { display: none;}
+#history-m_write .item .desc #btnAtt { position: relative; width: 280px; height: 140px; display: inline-block; vertical-align: top; border: 1px dashed #ddd; cursor: pointer;}
+#history-m_write .item .desc #btnAtt:before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 28px; background: #ddd; content: '';}
+#history-m_write .item .desc #btnAtt:after { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 2px; background: #ddd; content: '';}
+
+#history-m_write .item .desc #photo-view { display: inline-block;}
+
+#history-m_write .item .desc input[type=text], #history-m_write .item .desc input[type=password] { width: 100%;}
+
+#history-m_btn-wrap { text-align: center; margin-top: 50px;}
+
+#history-m_btn-wrap a.btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}
+#history-m_btn-wrap a { min-width: 210px; display: inline-block; font-family: 'scdream5'; line-height: 56px; padding: 0 20px; margin: 0 5px; transition: all 0.5s;}

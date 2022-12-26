@@ -1,0 +1,106 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins,
+kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
+ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details,
+figcaption, figure, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+input[type=tel], input[type=time], input[type=text],
+input[type=password], input[type=search], input[type=email],
+input[type=file], input[type=url], input[type=number], input[type=date], textarea {
+    height: 46px;
+    font-size: 0.75rem;
+    color: #1f2233;
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    transition: all 0.5s;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: transparent;
+    outline-color: #c684ff;
+}
+
+#root, #container2{overflow: hidden;}
+#root.sidebar #container2 {left:0; width:100vw;}
+
+#container2 {position:relative; min-height:100vh; left:calc(275px - 20px); top:0; width:calc(100vw - 255px); background:#fafafa; z-index:2; transition:all 0.5s ease;}
+
+.contents {position:relative; padding: 30px;}
+
+#push_list table {border-top:3px solid #1f2233; background:#fff; width: 100%;}
+#push_list table .num {width:5%;}
+#push_list table .state {width:10%;}
+#push_list table .type {width:10%;}
+#push_list table .date {width:15%;}
+#push_list table .reward {width:8%;}
+#push_list table .people {width:8%;}
+#push_list table .management {width:11%;}
+#push_list table thead th {font-family:'scdream6'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
+#push_list table td {min-height:70px; font-size:0.875rem; text-align:center; padding:15px 0; border-bottom:1px solid #e8e8e8;}
+#push_list table span.member em {position:relative; color:#cf7afe; margin-left:4px; padding-left:10px;}
+#push_list table span.member em:before {position:absolute; left:0; top:50%; transform:translateY(-50%); color:#1f2233; content:'/';}
+#push_list table a.btn {min-width:54px; font-size:0.813rem; line-height:28px; margin:1px 0; display:inline-block; border-radius:3px;}
+#push_list table a.btn.btnReport {color:#2ca323; border:1px solid #2ca323;}
+#push_list table a.btn.btnCopy2 {color:#fff; background:#305ee2;}
+#push_list table a.btn.btnDel {color:#a2a2a2; border:1px solid #a2a2a2;}
+
+#push_search input[type=text].search-val { width: 50%; margin-left: 10px; padding: 0 60px 0 20px; background: url(../../../../img/ico_searchVal.svg) white right 20px center no-repeat; background-size: 20px;}
+
+#push_search select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0 5px 0 5px; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
+#push_search option { font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+
+#push_search {position:relative; padding:30px 50px 20px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
+#push_search .search-form {display: inline-block; width: 50%;}
+#push_search .search-form li {margin-bottom:30px;}
+#push_search .search-form select{margin-right: 50px;}
+#push_search .search-form li > div { min-width: 48%; display: inline-block;}
+#push_search .search-form li > div > span{margin: 0 5px;}
+#push_search .search-form li > div > input[type=date]{width: 200px;}
+#push_search .search-form li > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#push_search .search-form li > div > .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#push_search .search-form li > div > .react-datepicker__tab-loop{position: fixed; z-index: 1000;}
+#push_search .search-form li:last-child {margin-bottom:0;}
+#push_search .search-form h4, #push_search .sch-all h4 {font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
+
+#push_search .search-box {float: right; width: 50%; text-align: right; line-height: 36px;}
+#push_search .search-box a.btn-schAll {cursor: pointer; position: relative; display: inline-block; font-family: 'scdream3'; font-size: 0.875rem; color: #cf7afe; line-height: 44px; padding: 0 40px 0 20px; margin-left:5px; border: 1px solid #cf7afe; background: #fff;}
+#push_search .search-box a.btn-schAll:before { position: absolute; right: 10px; top: 45%; transform: translateY(-50%) rotate(45deg); width: 8px; height: 8px; border-bottom: 1px solid #cf7afe; border-right: 1px solid #cf7afe; content: '';}
+
+#push_search .sch-all.no{opacity: 0; position: absolute;}
+#push_search .sch-all {opacity: 1; height: 100%; margin-top: 20px; transition: all 0.3s;}
+#push_search .sch-all > div{display: inline-block; vertical-align: top; margin-right: 50px;}
+#push_search .sch-all > div > input[type=date]{width: 200px;}
+#push_search .sch-all > div > div > div > input[type=text]{width: 200px;}
+#push_search .sch-all > div > .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#push_search .sch-all > div > .react-datepicker__tab-loop{position: fixed; z-index: 1000;}
+#push_search .sch-all > div > span{margin: 0 5px;}
+#push_search .sch-all .platform-box {display: inline-block;}
+#bo_search .sch-all .platform-box span { width: auto; display: inline-block; margin-right: 5px;}
+
+#push_search input[type=radio]{display: none;}
+#push_search input[type=radio]:checked + label { color: #fff; background: #c684ff;}
+#push_search input[type=radio] + label {display: inline-block; width:100%; min-width: 60px; font-family:'scdream3'; font-size:0.875rem; line-height:40px; text-align:center; padding:0; border-radius:5px; border:1px solid #e8e8e8; cursor:pointer; transition:all 0.5s;}
+
+#push_list .sel-number { display: inline-block;}
+#push_list .search-result select{height: 36px; position: relative; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0 5px 0 5px; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
+#push_list .search-result option{ font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+#push_list .search-result {position:relative; text-align:right; margin-bottom:10px;}
+#push_list .search-result .sel-tpye {position:absolute; left:0; top:50%; transform:translateY(-50%);}
+#push_list .search-result .sel-tpye span { font-family: 'scdream5'; color: #cf7afe; margin: 0 5px;}
+
+#push_list .view-icon { display: inline-block; vertical-align: top; margin-right: 20px;}
+#push_list .view-icon li { display: inline-block; font-family: 'scdream3'; font-size: 0.75rem; line-height: 36px; padding-left: 20px; margin-left: 20px;}
+#push_list .view-icon li.ico-report{color: #2ca323;}
+#push_list .view-icon li.ico-copy{color: #305ee2;}
+#push_list .view-icon li.ico-del{color: #a2a2a2;}
+
+#push_btn-wrap { text-align: center; margin-top: 50px; justify-content: center; display: flex; align-items: center;}
+#push_btn-wrap a { min-width: 210px; display: inline-block; font-family: 'scdream5'; color: #fff; line-height: 56px; padding: 0 20px; margin: 0 5px; background: #cf7afe; transition: all 0.5s;}
+#push_btn-wrap a:hover {background:#b46ef0;}

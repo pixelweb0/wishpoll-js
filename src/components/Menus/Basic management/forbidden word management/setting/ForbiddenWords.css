@@ -1,0 +1,26 @@
+.contents { position: relative; padding: 30px;}
+.contents > .forbidden-word_h { position: relative; width: 75%; font-family: 'scdream7'; font-size: 1.375rem; margin-bottom: 20px;}
+
+#forbidden-word_add-form { position: relative; margin-bottom: 20px;}
+#forbidden-word_add-form input[type=text] { background: #fff;}
+#forbidden-word_add-form button {margin-left: 5px; font-family: 'scdream3'; font-size: 0.875rem; color: #c684ff; line-height: 44px; padding: 0 35px; border: 1px solid #c684ff; background: #fff; cursor: pointer; transition: all 0.5s;}
+#forbidden-word_add-form button:hover{background: #fcf9ff;}
+
+.contents #forbidden-word_list { position: relative;}
+#forbidden-word_list .search-result { position: relative; text-align: right; margin-bottom: 10px;}
+#forbidden-word_list .search-result .sel-tpye { position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+#forbidden-word_list .search-result .sel-tpye p { font-size: 0.875rem;}
+#forbidden-word_list .search-result .sel-tpye span { font-family: 'scdream5'; color: #cf7afe; margin: 0 5px;}
+
+#forbidden-word_list .sel-number {display: inline-block;}
+#forbidden-word_list .sel-number input[type=text] { width: 100%; margin-right: 20px; background: url(../../../../../img/ico_searchVal.svg) white right 20px center no-repeat; background-size: 20px;}
+
+#forbidden-word_list table { width: 100%; border-spacing: 0; border-collapse: collapse; border-top: 3px solid #1f2233; background: #fff;}
+#forbidden-word_list colgroup { display: table-column-group;}
+#forbidden-word_list table .num { width: 5%;}
+#forbidden-word_list table .date { width: 15%;}
+#forbidden-word_list table .management { width: 15%;}
+#forbidden-word_list table thead th { font-family: 'scdream6'; font-size: 0.875rem; font-weight: normal; padding: 24px 0; border-bottom: 1px solid #e8e8e8;}
+#forbidden-word_list table td { min-height: 70px; font-size: 0.875rem; text-align: center; padding: 15px 0; border-bottom: 1px solid #e8e8e8;}
+#forbidden-word_list table a.btn.btnL { line-height: 28px; color: #b2b2b2; border: 1px solid #b2b2b2;}
+#forbidden-word_list table a.btn { min-width: 54px; font-size: 0.813rem; margin: 1px; display: inline-block; border-radius: 3px;}

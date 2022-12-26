@@ -1,0 +1,60 @@
+.contents > .notice-edit_h { font-family: 'scdream7'; font-size: 1.375rem;}
+
+#notice-edit_write { overflow: hidden;}
+#notice-edit_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
+#notice-edit_write .item .title { position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+
+#notice-edit_write .item .desc input[type=text]{width: 100%;}
+
+#notice-edit_write .item .desc .input-group>span{ margin-right: 10px;}
+#notice-edit_write .item .desc { padding: 20px 30px;}
+#notice-edit_write .item .desc p.comment { font-size: 0.75rem; color: #35b256; margin-top: 10px;}
+#notice-edit_write .item .desc > select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
+#notice-edit_write .item .desc > option{ font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+#notice-edit_write .item .desc textarea{width: 100%; padding-top: 13px;}
+#notice-edit_write .item .desc #btnAtt { position: relative; width: 280px; height: 140px; display: inline-block; vertical-align: top; border: 1px dashed #ddd; cursor: pointer;}
+#notice-edit_write .item .desc #btnAtt:before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 28px; background: #ddd; content: '';}
+#notice-edit_write .item .desc input[type=file] { display: none; }
+#notice-edit_write .item .desc #btnAtt:after { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 2px; background: #ddd; content: '';}
+#notice-edit_write .item .desc .img-photo #photo-view {position: absolute; left: 2rem; top: auto; display: inline-block;}
+#notice-edit_write .item .desc .img-photo #photo-view .preview-img{width: 280px; height: 140px; object-fit: cover;}
+#notice-edit_write .item .desc .img-photo #photo-view input[type=button].deleteImg {position: absolute; width: 280px; height: 2.3rem; bottom: 0; left: 0; background: black; color: white; font-size: 1rem; opacity: 0.7; cursor: pointer;}
+
+#notice-edit_write .item .desc span.txt { display: inline-block; font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin: 0 10px;}
+
+#notice-edit_write .item .desc .input-group > input[type=date]{width: 200px;}
+#notice-edit_write .item .desc .input-group > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#notice-edit_write .item .desc .input-group > div > .aa{margin: 0 10px;}
+#notice-edit_write .item .desc .input-group > div > input[type=date]{width: 200px;}
+#notice-edit_write .item .desc .input-group > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+
+#notice-edit_write .item .desc .input-group>div{display: inline-block;}
+#notice-edit_write .item .desc .input-group>div.no{display: none;}
+#notice-edit_write .item .desc .input-group>.react-datepicker-wrapper, #notice-edit_write .item .desc .input-group>div>.react-datepicker-wrapper{width: 200px; margin-right: 10px; background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#notice-edit_write .item .desc .input-group>div>.react-datepicker__tab-loop{position: fixed; z-index: 1000;}
+
+/* ck에디터 */
+#notice-edit_write .item .desc .ck-reset > .ck-editor__main > .ck-content > p{font-size: 13px;}
+
+#notice-edit_btn-wrap {text-align: center;margin-top: 50px; display: flex; justify-content: center;}
+#notice-edit_btn-wrap a { min-width: 210px; display: inline-block; font-family: 'scdream5'; color: #fff; line-height: 56px; padding: 0 20px; margin: 0 5px; background: #cf7afe; transition: all 0.5s;}
+#notice-edit_btn-wrap a.btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}
+#notice-edit_btn-wrap a.btnCF {color: #fff;background: #cf7afe;}
+#notice-edit_btn-wrap .btn.btnCF { border: none; cursor: pointer;}
+#notice-edit_btn-wrap .btn.btnCF>a:hover {background:#b46ef0;}
+
+#notice-edit_write .item .desc .chkBox { position: relative; font-family: 'scdream3'; font-size: 0.875rem; margin-top: 10px;}
+#notice-edit_write input[type=checkbox] {display: none;}
+#notice-edit_write .item .desc input[type=radio] {display: none;}
+
+#notice-edit_write input[type=checkbox] + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top; padding-top: 2px;}
+#notice-edit_write input[type=checkbox] + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
+#notice-edit_write input[type=checkbox] + label:after { position: absolute; left: 0; top: 0; width: 23px; height: 23px; border: 1px solid #dadada; background: #fff; content: '';}
+#notice-edit_write input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 22px; background: #cf7afe; background-size: 100%; content: '';}
+
+#notice-edit_write .item .desc input[type=radio] + label.type2 { position: relative; min-width: auto; font-size: 0.875rem; color: #1f2233; line-height: normal; text-align: left; margin-right: 50px; padding: 0 0 0 33px; border-radius: 0; border: 0;}
+#notice-edit_write .item .desc input[type=radio] + label.type2:before { position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-radius: 50%; width: 20px; height: 20px; border: 1px solid #e8e8e8; background: #fff; transition: all 0.5s; content: '';}
+#notice-edit_write .item .desc input[type=radio]:checked + label.type2:before { border: 1px solid #c684ff;}
+#notice-edit_write .item .desc input[type=radio] + label.type2:before { position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-radius: 50%; width: 20px; height: 20px; border: 1px solid #e8e8e8; background: #fff; transition: all 0.5s; content: '';}
+#notice-edit_write .item .desc input[type=radio]:checked + label.type2:after { position: absolute; left: 5px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #c684ff; content: '';}
+

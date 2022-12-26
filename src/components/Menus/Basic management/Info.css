@@ -1,0 +1,45 @@
+#root, #container2{overflow: hidden;}
+#root.sidebar #container2 {left:0; width:100vw;}
+
+#container2 {position:relative; min-height:100vh; left:calc(275px - 20px); top:0;  width:calc(100vw - 255px); background:#fafafa; z-index:2; transition:all 0.5s ease;}
+
+.contents {position:relative; padding: 30px;}
+.contents > h2 {font-family:'scdream7'; font-size:1.813rem;}
+
+section.m01 {margin-left:-30px; overflow:hidden;}
+section.m01 li {position:relative; float:left; width:calc(100% / 4 - 30px); margin-left:30px; margin-top:30px; padding:30px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff;}
+section.m01 .proportion {position:absolute; right:30px; bottom:30px; font-size:0.875rem; padding-left:70px;}
+section.m01 .proportion:before {position:absolute; left:0; font-family:'scdream3'; color:#1f2233; content:'전일 대비';}
+section.m01 .proportion.up {color:#35b256;}
+section.m01 .proportion.down {color:#dd4040;}
+section.m01 .proportion i {width:13px; height:13px; display:inline-block; margin-right:5px;}
+section.m01 dt {margin-bottom:20px;}
+section.m01 dt span {position:relative; font-family:'scdream3'; font-size:0.875rem; color:#1f2233;}
+
+section.m01 dt span:nth-child(2), section.m01 dd span:nth-child(2) {position:relative; margin-left:15px; padding-left:15px;}
+section.m01 dt span:nth-child(2):before, section.m01 dd span:nth-child(2):before {position:absolute; font-family:'scdream1'; left:-3px; content:'|'}
+section.m01 dd {font-family:'scdream7'; font-size:1.375rem;}
+
+section.m02 li {margin-top:30px;}
+section.m02 .point-wrap {float:left; width:calc(100% / 4 - 22px); padding:30px; border:1px solid #e8e8e8; background:#fff;}
+section.m02 .point-wrap:nth-child(2) {margin-left:30px;}
+section.m02 .point-wrap .title {position:relative; padding-bottom:30px; margin-bottom:25px; border-bottom:1px solid #bbb;}
+section.m02 .point-wrap .title span {font-family:'scdream6';}
+section.m02 .point-wrap .title p {font-family:'scdream7'; font-size:1.375rem;}
+section.m02 .point-wrap .title strong {color:#cf7afe; margin:0 7px;}
+section.m02 .point-wrap .title a {position:absolute; top:0; right:0; font-family:'scdream3'; font-size:0.75rem; color:#b2b2b2; padding-right:10px;}
+section.m02 .point-wrap .title a:after {position:absolute; right:0; content:'+';}
+section.m02 .point-wrap li {position:relative; line-height:26px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; margin-top:15px; padding-right:20%;}
+section.m02 .point-wrap li:first-child {margin-top:0;}
+section.m02 .point-wrap li .result {position:absolute; right:0; font-size:0.813rem; color:#b2b2b2; line-height:24px; padding:0 10px;border-radius:3px; border:1px solid #b2b2b2;}
+section.m02 .point-wrap li .result.complete {color:#35b256; border:1px solid #35b256;}
+section.m02 .point-wrap li .result.fail {color:#dd4040; border:1px solid #dd4040;}
+
+section.m02 .graph-wrap {float:left; width:calc(100% / 2 - 16px); min-height:279px; margin-left:30px; padding:30px; border:1px solid #e8e8e8; background:#fff; overflow:hidden;}
+section.m02 .graph-wrap.ml0 {margin-left:0;}
+section.m02 .graph-wrap.full {width:100%; margin-left:0;}
+section.m02 .graph-wrap .title {position:relative; font-family:'scdream6'; margin-bottom:10px;}
+section.m02 .graph-wrap .title span {font-family:'scdream3'; margin-left:10px;}
+section.m02 .graph-wrap.full .title strong {display:block; font-family:'scdream7'; font-size:1.375rem;}
+section.m02 .graph-wrap.full .title strong em {color:#cf7afe; margin:0 7px 0 10px;}
+section.m02 .graph-wrap .desc {text-align:center;}

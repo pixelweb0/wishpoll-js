@@ -1,0 +1,70 @@
+.contents {position: relative; padding: 30px;}
+
+#scope_write {overflow:hidden;}
+#scope_write .scope_left {float:left; width:75%;}
+#scope_write .item {margin-top:10px; border:1px solid #e8e8e8; background:#fff;}
+#scope_write .item .title {font-family: 'scdream6'; font-size:0.95rem; line-height:64px; padding:0 30px; border-bottom:1px solid #e8e8e8; font-weight: bold;}
+#scope_write .item .desc {padding:20px 30px;}
+#scope_write .item .desc input[type=date] {outline-color: #c684ff;width: 100%;height: 46px;font-size: 0.75rem;color: #1f2233;padding: 0 20px;border: 1px solid #ddd;transition: all 0.5s;vertical-align: middle;box-sizing: border-box;background: transparent;}
+#scope_write .item .desc input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#scope_write .item .desc input[type=text] {outline-color: #c684ff; width:100%; height: 46px; font-size: 0.75rem; color: #1f2233; padding: 0 20px; border: 1px solid #ddd; transition: all 0.5s; vertical-align: middle; box-sizing: border-box; background: transparent;}
+#scope_write .item .desc input.w180{width: 180px; margin-right: 10px;}
+#scope_write .item .desc #btnAtt {position:relative; width:280px; height:140px; display:inline-block; vertical-align:top; cursor:pointer; border: 1px dashed #e8e8e8;}
+#scope_write .item .desc #btnAtt:before {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:2px; height:28px; background:#e8e8e8; content:'';}
+#scope_write .item .desc #btnAtt:after {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:28px; height:2px; background:#e8e8e8; content:'';}
+#scope_write .item .desc .img-photo #photo-view { position: absolute; left: 2rem; top: auto; display: inline-block;}
+#scope_write .item .desc .img-photo #photo-view .preview-img{width: 280px; height: 140px; object-fit: cover;}
+#scope_write .item .desc .img-photo #photo-view input[type=button].deleteImg {position: absolute; width: 280px; height: 2.3rem; bottom: 0; left: 0; background: black; color: white; font-size: 1rem; opacity: 0.7; cursor: pointer;}
+
+#scope_write .item .desc input[type=radio]{display: none;}
+#scope_write .item .desc input[type=radio]:checked + label { color: #fff; background: #c684ff;}
+#scope_write .item .desc input[type=radio] + label { min-width: 140px; font-size: 0.875rem; color: #c684ff; line-height: 44px; text-align: center; margin-right: 10px; padding: 0 20px; display: inline-block; border-radius: 10px; border: 1px solid #c684ff; cursor: pointer; transition: all 0.5s;}
+#scope_write .item .desc input[type=text].w100{width: 100px; margin-left: 10px; text-align: center;}
+
+#scope_write .item .desc .react-datepicker-wrapper{background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+
+/* emoji */
+#scope_write .item .desc .react-input-emoji--container{border: none;}
+#scope_write .item .desc .react-input-emoji--input{position: relative;  outline: none; border: 1px solid #ddd; height: 46px;}
+#scope_write .item .desc .react-input-emoji--button{position: absolute; top: 1rem; right: 0%; z-index: 1000;}
+#scope_write .item .desc .react-emoji{width: 100%;}
+#scope_write .item .desc .react-emoji-picker--wrapper{ position: absolute; bottom: 0; right: 0; height:300px; width: 400px; overflow: hidden; z-index: 10;}
+#scope_write .item .desc .react-emoji-picker { top: 19rem; left: 66rem; animation: slidein 0.1s ease-in-out; position: fixed;}
+
+#scope_write .item .desc input[type=file] {display:none;}
+#scope_write .item .desc input.txtR {width:180px; text-align:right;}
+#scope_write .item .desc input.txtR.no { background-color: #ddd;}
+#scope_write .item .desc span.txt {display:inline-block; font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-left:10px; font-weight: bold;}
+#scope_write .item .desc p.comment {font-size:0.75rem; color:#35b256; margin-top:10px;}
+
+#scope_write .item .desc .chkBox { position: relative; font-family: 'scdream3'; font-size: 0.875rem; margin-top: 10px;}
+#scope_write .item .desc input[type=checkbox]#agr-chk + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #ddd; background: #fff; content: '';}
+#scope_write .item .desc input[type=checkbox]#agr-chk + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
+#scope_write .item .desc input[type=checkbox]#agr-chk {display: none;}
+#scope_write .item .desc input[type=checkbox]#agr-chk:checked + label:after { position: absolute; top: 47%; left: 1px; transform: translateY(-45%); width: 20px; height: 20px; background-color: #b46ef0; background-size: 100%; content: '';}
+
+#scope_write .item .desc input[type=checkbox]#agr-chk2 + label:before { position: absolute; left: 0; top: -10px; width: 22px; height: 22px; border: 1px solid #ddd; background: #fff; content: '';}
+#scope_write .item .desc input[type=checkbox]#agr-chk2 + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
+#scope_write .item .desc input[type=checkbox]#agr-chk2 {display: none;}
+#scope_write .item .desc input[type=checkbox]#agr-chk2:checked + label:after { position: absolute; top: 47%; left: 1px; transform: translateY(-45%); width: 20px; height: 20px; background-color: #b46ef0; background-size: 100%; content: '';}
+
+#scope_write .preview .phone {position:relative; max-width:360px; height:46rem; max-height:730px; margin:0 auto; padding:1.3vh 1vw 1.5vh; background:url(../../../../../img/img_phone.svg) top center no-repeat; background-size:100%;}
+#scope_write .preview .phone .desc {position:relative; height:100%; max-height:690px; display: flex; justify-content: center; align-items: center;}
+#scope_write .right { width:25%; padding:0 20px; position: fixed; right: -30px; bottom: 1rem;}
+#scope_write .preview {text-align:center; border: 1xp solid #333;}
+#scope_write .preview h4 {font-family: 'scdream6'; font-size:1.25rem; margin:auto 30px;}
+
+#scope_write .preview .phone .desc .modal{box-shadow: 1px 1px 5px #d1d1d1; height: 18rem; width: 17rem; border-radius: 15px; margin-bottom: 10rem;}
+#scope_write .preview .phone .desc .modal .title{font-weight: bold; display: flex; margin: 10px 8px 5px 10px; font-size: 11px;}
+#scope_write .preview .phone .desc .modal img{ width: 15rem; height: 7rem; border-radius: 10px;}
+#scope_write .preview .phone .desc .modal ul.info{display: flex; justify-content: space-around; margin: 5px; align-items: center;  font-size: 10px;}
+#scope_write .preview .phone .desc .modal .date{display: flex; justify-content: center; font-size: 12px; color: rgba(68, 68, 68, 0.667); margin-bottom: 10px;}
+#scope_write .preview .phone .desc .modal .updowns{margin-top: 2rem;}
+#scope_write .preview .phone .desc .modal .updowns .updown{display: flex; justify-content: space-between; padding: 0 50px; font-size: 12px;}
+#scope_write .item .desc .boxs>.comment.one{margin-bottom: 15px;}
+
+#scope_btn-wrap {text-align:center; margin-top:50px; justify-content: center; display: flex; align-items: center;}
+#scope_btn-wrap a {min-width:210px; display:inline-block; font-family:'scdream5'; color:#fff; line-height:56px; padding:0 20px; margin:0 5px; background:#cf7afe; transition:all 0.5s;}
+#scope_btn-wrap a:hover {background:#b46ef0;}
+#scope_btn-wrap .scope_registration-btn{border: none; cursor: pointer;}
+#scope_btn-wrap a.scope_btn.scope_btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}

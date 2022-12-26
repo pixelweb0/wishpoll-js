@@ -1,0 +1,82 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins,
+kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
+ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details,
+figcaption, figure, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+input[type=tel], input[type=time], input[type=text],
+input[type=password], input[type=search], input[type=email],
+input[type=file], input[type=url], input[type=number], input[type=date], textarea {
+    height: 46px;
+    font-size: 0.75rem;
+    color: #1f2233;
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    transition: all 0.5s;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: transparent;
+    outline-color: #c684ff;
+}
+
+#root, #container2{overflow: hidden;}
+#root.sidebar #container2 {left:0; width:100vw;}
+
+#container2 {position:relative; min-height:100vh; left:calc(275px - 20px); top:0; width:calc(100vw - 255px); background:#fafafa; z-index:2; transition:all 0.5s ease;}
+
+.contents {position:relative; padding: 30px;}
+
+#full-member_list table {border-top:3px solid #1f2233; background:#fff; width: 100%;}
+#full-member_list table .num {width:5%;}
+#full-member_list table .state {width:10%;}
+#full-member_list table .type {width:10%;}
+#full-member_list table .date {width:15%;}
+#full-member_list table .reward {width:8%;}
+#full-member_list table .people {width:8%;}
+#full-member_list table .management {width:11%;}
+#full-member_list table thead th {font-family:'scdream6'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
+#full-member_list table tbody tr{cursor: pointer;}
+#full-member_list table td {min-height:70px; font-size:0.875rem; text-align:center; padding:15px 0; border-bottom:1px solid #e8e8e8;}
+#full-member_list table span.state {color:#b2b2b2; font-weight: bold;}
+#full-member_list table span.state.stand {color:#1f2233;}
+#full-member_list table span.state.ongoing {color:#35b256;}
+#full-member_list table span.state.complete {color:#dd4040;}
+#full-member_list table span.member em {position:relative; color:#cf7afe; margin-left:4px; padding-left:10px;}
+#full-member_list table span.member em:before {position:absolute; left:0; top:50%; transform:translateY(-50%); color:#1f2233; content:'/';}
+#full-member_list table a.btn {min-width:54px; font-size:0.813rem; line-height:28px; margin:1px 0; display:inline-block; border-radius:3px;}
+#full-member_list table a.btn.btnCF {color:#fff; background:#cf7afe; margin-right: 5px;}
+#full-member_list table a.btn.btnL {color:#b2b2b2; border:1px solid #b2b2b2;}
+
+#full-member_search select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
+#full-member_search option{ font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+#full-member_search {position:relative; padding:30px 50px 20px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
+#full-member_search .search-form {display: inline-block; width: 50%;}
+#full-member_search .search-form li {margin-bottom:30px;}
+#full-member_search .search-form select{margin-right: 50px;}
+#full-member_search .search-form li > div { max-width: 90%; display: inline-block;}
+#full-member_search .search-form li > div > span{margin: 0 5px;}
+#full-member_search .search-form li > div > input[type=date]{width: 200px;}
+#full-member_search .search-form li > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#full-member_search .search-form li > div > div > div > input[type=text]{width: 200px;}
+#full-member_search .search-form li > div > .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#full-member_search .search-form li > div > .react-datepicker__tab-loop{position: fixed; z-index: 1000;}
+#full-member_search .search-form li:last-child {margin-bottom:0;}
+#full-member_search .search-form h4 {font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
+
+#full-member_search .search-box {float:right; width:50%; text-align:right;}
+#full-member_search .search-box input[type=text].search-val {width: 50%; margin-left: 10px; padding: 0 60px 0 20px; background: url(../../../../img/ico_searchVal.svg) white right 20px center no-repeat; background-size: 20px;}
+
+#full-member_list .search-result select{height: 36px; position: relative; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0 5px 0 5px; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
+#full-member_list .search-result option{ font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+#full-member_list .search-result {position:relative; text-align:right; margin-bottom:10px;}
+#full-member_list .search-result .sel-tpye {position:absolute; left:0; top:50%; transform:translateY(-50%);}
+#full-member_list .search-result .sel-tpye p {font-size:0.875rem;}
+#full-member_list .search-result .sel-tpye span {font-family:'scdream5'; color:#cf7afe; margin:0 5px;}

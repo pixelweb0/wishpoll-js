@@ -1,0 +1,53 @@
+input[type=tel][readonly], input[type=text][readonly], input[type=password][readonly],
+input[type=email][readonly], input[type=search][readonly], input[type=tel][disabled],
+input[type=text][disabled], input[type=password][disabled], input[type=search][disabled],
+input[type=email][disabled] {
+    background: #eaeaea;
+    border-color: #c0c0c0;
+    color: #666;
+}
+
+.contents { position: relative; padding: 30px;}
+.contents > .registration_h { position: relative; width: 75%; font-family: 'scdream7'; font-size: 1.375rem; margin-bottom: 20px;}
+
+#registration_write {overflow: hidden;}
+#registration_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
+#registration_write .item .title { position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+
+#registration_write .item .desc { font-family: 'scdream3'; font-size: 0.875rem; padding: 20px 30px;}
+#registration_write select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff;}
+#registration_write option { font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+#registration_write .item .desc input[type=text], #registration_write .item .desc input[type=password] { width: 100%;}
+#registration_write .item .desc p.comment { font-size: 0.75rem; color: #35b256; margin-top: 10px;}
+#registration_write .item .desc span.txt { display: inline-block; font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin: 0 10px;}
+
+#registration_write .item .desc input[type=radio] { display: none;}
+#registration_write .item .desc input[type=radio] + label.type2 { position: relative; min-width: auto; font-size: 0.875rem; color: #1f2233; line-height: normal; text-align: left; margin-right: 50px; padding: 0 0 0 33px; border-radius: 0; border: 0;}
+#registration_write .item .desc input[type=radio] + label.type2:before { position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-radius: 50%; width: 20px; height: 20px; border: 1px solid #e8e8e8; background: #fff; transition: all 0.5s; content: '';}
+#registration_write .item .desc input[type=radio]:checked + label.type2:before { border: 1px solid #c684ff;}
+#registration_write .item .desc input[type=radio]:checked + label.type2:after { position: absolute; left: 5px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #c684ff; content: '';}
+#registration_write .item .desc input[type=radio]:checked + label.type2 { color: #c684ff; background: none;}
+
+#registration_write .item .desc .input-group > input[type=text]{width: 200px;}
+#registration_write .item .desc .input-group > input[type=date]{width: 200px;}
+#registration_write .item .desc .input-group > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#registration_write .item .desc .input-group > .react-datepicker-wrapper{width: 200px; background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#registration_write .item .desc .input-group > .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}
+#registration_write .item .desc > .input-group > .aa { margin: 0 10px;}
+
+#registration_write .item .desc input[type=text].w180 {width: 180px;}
+#registration_write .item .desc input[type=text].w80 { width: 80%;}
+
+#registration_write .item .desc input[type=file] { display: none;}
+#registration_write .item .desc #btnAtt { position: relative; width: 280px; height: 140px; display: inline-block; vertical-align: top; border: 1px dashed #ddd; cursor: pointer;}
+#registration_write .item .desc #btnAtt:before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 28px; background: #ddd; content: '';}
+#registration_write .item .desc #btnAtt:after { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 2px; background: #ddd; content: '';}
+#registration_write .item .desc .img-photo #photo-view {position: absolute; left: 2rem; top: auto; display: inline-block;}
+#registration_write .item .desc .img-photo #photo-view .preview-img{width: 280px; height: 140px; object-fit: cover;}
+#registration_write .item .desc .img-photo #photo-view input[type=button].deleteImg {position: absolute; width: 280px; height: 2.3rem; bottom: 0; left: 0; background: black; color: white; font-size: 1rem; opacity: 0.7; cursor: pointer;}
+
+#registration_btn-wrap {text-align: center; margin-top: 50px;}
+#registration_btn-wrap a {cursor: pointer; min-width: 210px; display: inline-block; font-family: 'scdream5'; color: #fff; line-height: 56px; padding: 0 20px; margin: 0 5px; background: #cf7afe; transition: all 0.5s;}
+#registration_btn-wrap a.btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}
+#registration_btn-wrap a.btnCF { color: #fff; background: #cf7afe; }
+#registration_btn-wrap a.btnCF:hover {background:#b46ef0;}

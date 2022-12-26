@@ -1,0 +1,90 @@
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+input[type=tel], input[type=time], input[type=text],
+input[type=password], input[type=search], input[type=email],
+input[type=file], input[type=url], input[type=number],
+input[type=date], textarea {
+    height: 46px;
+    font-size: 0.75rem;
+    color: #1f2233;
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    transition: all 0.5s;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+ul {overflow: hidden;}
+ul, ol, li {list-style: none;}
+input[type=radio], input[type=checkbox] {position: absolute;visibility: hidden;}
+
+.contents { position: relative; padding: 30px;}
+
+#push-sending_write {overflow: hidden;}
+#push-sending_write .left { float: left; width: 75%; transition: all 0.5s;}
+#push-sending_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
+#push-sending_write .item .title {position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+
+#push-sending_write .item .desc { font-family: 'scdream3'; font-size: 0.875rem; padding: 20px 30px;}
+#push-sending_write .item .desc p.comment { font-size: 0.75rem; color: #35b256; margin-top: 10px;}
+#push-sending_write .item .desc #btnAtt { position: relative; width: 280px; height: 140px; display: inline-block; vertical-align: top; border: 1px dashed #ddd; cursor: pointer;}
+#push-sending_write .item .desc #btnAtt:before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 28px; background: #ddd; content: '';}
+#push-sending_write .item .desc #btnAtt:after { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 2px; background: #ddd; content: '';}
+#push-sending_write .item .desc #photo-view { display: inline-block;}
+
+#push-sending_write .item .desc select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin-right: 5px; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff;}
+
+#push-sending_write .item .desc input[type=file] {display: none;}
+
+#push-sending_write .item .desc input[type=radio] {display: none;}
+#push-sending_write .item .desc input[type=radio] + label { min-width: 140px; font-size: 0.875rem; color: #c684ff; line-height: 44px; text-align: center; margin-right: 5px; padding: 0 20px; display: inline-block; border-radius: 10px; border: 1px solid #c684ff; cursor: pointer; transition: all 0.5s;}
+#push-sending_write .item .desc input[type=radio]:checked + label {color: #fff;background: #c684ff;}
+
+#push-sending_write .item .desc span.txt { display: inline-block; font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin: 0 10px;}
+#push-sending_write .item .desc input[type=text].w180{width: 180px;}
+#push-sending_write .item .desc input[type=text].w80{width: 80%;}
+
+#push-sending_write .item .desc > input[type=date]{width: 200px;}
+#push-sending_write .item .desc > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+
+#push-sending_write .item .desc > div > input[type=text]{width: 100%;}
+#push-sending_write .item .desc > div > div > input[type=text]{width: 200px;}
+#push-sending_write .item .desc > .react-datepicker-wrapper{width: 200px;}
+#push-sending_write .item .desc > .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}
+#push-sending_write .item .desc .input-group > div > div > input[type=text]{width: 200px;}
+#push-sending_write .item .desc .input-group > .react-datepicker-wrapper{width: 200px; margin-right: 5px;}
+#push-sending_write .item .desc .input-group > .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}
+
+/* ck에디터 */
+#push-sending_write .item .desc .ck-reset > .ck-editor__main > .ck-content > p{font-size: 13px;}
+
+#push-sending_write .item .box-wrap {background: #f7f9fb;}
+#push-sending_write .item .box-wrap.type2 {margin-bottom: 10px;border: 1px solid #e8e8e8;}
+#push-sending_write .item .radio-select-wrap li {border-bottom: 1px solid #e8e8e8;}
+#push-sending_write .item .radio-select-wrap li > p {position: relative;width: 100%;padding: 20px 30px;}
+#push-sending_write input[type=checkbox] {display: none;}
+#push-sending_write input[type=checkbox] + label {position: relative; width: 100%; height: 22px; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top; font-weight: bold;}
+#push-sending_write .item .radio-select-wrap li label:before {left: 0; top: 50%; transform: translateY(-50%);}
+#push-sending_write input[type=checkbox] + label:before {position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
+#push-sending_write input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 20px; background: #c684ff; content: '';}
+#push-sending-write input[type=checkbox] + label:after {position: absolute; left: 0; top: 0; width: 23px; height: 23px; border: 1px solid #dadada; background: #fff; content: '';}
+#push-sending_write .item .radio-select-wrap li .cont {height: 100%;padding: 20px 30px;border-top: 1px solid #e8e8e8;transition: max-height .5s ease-in-out;}
+#push-sending_write .item .radio-select-wrap li .cont p {overflow: hidden;}
+#push-sending_write .item .radio-select-wrap li .cont p.num4 span {float: left;width: calc(100% / 4 - 10px);margin-right: 10px;margin-bottom: 10px;}
+#push-sending_write .item .radio-select-wrap li .cont label {width: 100%;min-width: auto;margin-right: 0;background: #fff;}
+
+#push-sending_write .item .desc input[type=radio] {display: none;}
+
+#push-sending_write .item .radio-select-wrap li .cont p.num8 span {float: left;width: calc(100% / 8 - 10px);margin-right: 10px;margin-bottom: 10px;}
+
+#push-sending_btn-wrap {text-align: center; margin-top: 50px; justify-content: center; display: flex; align-items: center;}
+#push-sending_btn-wrap a { min-width: 210px; display: inline-block; font-family: 'scdream5'; color: #fff; line-height: 56px; padding: 0 20px; margin: 0 5px; background: #cf7afe; transition: all 0.5s;}
+#push-sending_btn-wrap a:hover {background:#b46ef0;}
+
+#push-sending_write .preview {text-align: center;}
+#push-sending_write .right { float: right; width: 25%; height: 100vh; padding: 0 20px; transition: all 0.5s;}
+#push-sending_write .preview h4 {font-family: 'scdream6';font-size: 1.25rem;margin: 10px auto 30px;}
+#push-sending_write .preview .device {min-height: 200px;margin-bottom: 100px;border: 1px solid #e8e8e8;background: #fff;}

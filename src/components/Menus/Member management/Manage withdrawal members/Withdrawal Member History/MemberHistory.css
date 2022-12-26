@@ -1,0 +1,50 @@
+ul, ol, li { list-style: none;}
+
+.contents { position: relative; padding: 30px;}
+.contents > .member-history_h { position: relative; width: 75%; font-family: 'scdream7'; font-size: 1.375rem; margin-bottom: 20px;}
+.contents > .member-history_h span { color: #cf7afe;}
+
+#member-history_search { position: relative; padding: 30px 50px 20px; margin-bottom: 50px; border: 1px solid #e8e8e8; border-top: 3px solid #cf7afe; background: #fff;}
+
+#member-history_search .search-form { display: inline-block; width: 50%;}
+#member-history_search .search-form li:last-child { margin-bottom: 0;}
+#member-history_search .search-form li > div { margin-top: 20px; display: inline-block; min-width: 48%;}
+
+#member-history_search .search-form span.aa { margin: 0 5px;}
+#member-history_search .search-form input[type=date]{width: 200px;}
+#member-history_search .search-form input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#member-history_search .search-form input[type=text]{width: 200px;}
+#member-history_search .search-form .react-datepicker-wrapper{width: 200px; background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+#member-history_search .search-form .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}
+
+#member-history_search .search-form h4, #member-history_search .sch-all h4 { font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin-right: 10px; display: inline-block; vertical-align: top;}
+
+#member-history_search .search-box { float: right; width: 50%; text-align: right; line-height: 36px;}
+#member-history_search .search-box input[type=text].search-val { width: 50%; margin-left: 10px; padding: 0 60px 0 20px; background: url(../../../../../img/ico_searchVal.svg) white right 20px center no-repeat; background-size: 20px;}
+
+#member-history_list .search-result { position: relative; text-align: right; margin-bottom: 10px;}
+#member-history_list .search-result .sel-tpye { position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+#member-history_list .search-result .sel-tpye p { font-size: 0.875rem;}
+#member-history_list .search-result .sel-tpye span { font-family: 'scdream5'; color: #cf7afe; margin: 0 5px;}
+
+#member-history_list .sel-number { display: inline-block;}
+
+#member-history_list .search-result select { height: 36px; border: 1px solid #1f2233; position: relative; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border-radius: 0; vertical-align: middle; background: #fff; outline-color: #cf7afe;}
+#member-history_list .search-result option { font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
+
+#member-history_list table { width: 100%; border-spacing: 0; border-collapse: collapse; border-top: 3px solid #1f2233; background: #fff;}
+#member-history_list table .num { width: 5%;}
+#member-history_list table .date { width: 15%;}
+#member-history_list table .state { width: 10%;}
+#member-history_list table .management { width: 15%;}
+#member-history_list table .date { width: 15%;}
+#member-history_list table thead th { font-family: 'scdream6'; font-size: 0.875rem; font-weight: normal; padding: 24px 0; border-bottom: 1px solid #e8e8e8;}
+#member-history_list table td { min-height: 70px; font-size: 0.875rem; text-align: center; padding: 15px 0; border-bottom: 1px solid #e8e8e8;}
+#member-history_list table span.state { color: #b2b2b2;}
+#member-history_list table span.state.ongoing { color: #35b256;}
+#member-history_list table a.btn { min-width: 54px; font-size: 0.813rem; line-height: 30px; margin: 1px; display: inline-block; border-radius: 3px;}
+#member-history_list table a.btn.btnL { line-height: 28px; color: #b2b2b2; border: 1px solid #b2b2b2;}
+
+#member-history_btn-wrap { text-align: center; margin-top: 50px;}
+#member-history_btn-wrap a.btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}
+#member-history_btn-wrap a { min-width: 210px; display: inline-block; font-family: 'scdream5'; line-height: 56px; padding: 0 20px; margin: 0 5px; transition: all 0.5s;}
