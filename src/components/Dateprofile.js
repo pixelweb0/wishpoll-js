@@ -4,7 +4,7 @@ import "./css/Dateprofile.css";
 function Dateprofile(){
     return (
         <div className="hd-top">
-            <button id="btn-nav"></button>
+            <button id="btn-nav">메뉴</button>
             <span className="time"></span>
             <div className="tnb">
                 <ul>

@@ -40,6 +40,9 @@ import ECorrect from "./components/Menus/Basic management/Notice Event/Notice Ed
 import NCorrect from "./components/Menus/Basic management/Notice Event/Notice Edit/Correct/NCorrect";
 import PopupCorrect from "./components/Menus/Basic management/Pop-up/Correct.js/PopupCorrect";
 
+import Poll2 from "./components/Menus/poll2/PollList2/Poll2";
+import Tabmenu2 from "./components/Menus/poll2/PollList2/TabMenu2/Tabmenu2";
+
 function App(){
     return (
         <BrowserRouter>
@@ -91,6 +94,9 @@ function App(){
                 <Route path="application-list1" element={<ApplicationList/>}/>
 
                 {/* 2차 폴 */}
+                <Route path="poll-totallist2" element={<Poll2/>}/>
+                    <Route path="poll-totallist2/poll-gamelist2" element={<Tabmenu2/>}/>
+
                 <Route path="full-list2" element={<FullList2/>}/>
                 <Route path="waiting-list2" element={<WaitingList2/>}/>
                 <Route path="ing-list2" element={<ProgressingList2/>}/>

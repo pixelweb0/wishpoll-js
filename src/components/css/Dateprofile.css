@@ -3,4 +3,14 @@
 .hd-top .tnb {position:absolute; top:50%; right:30px; transform:translateY(-50%);}
 .hd-top .tnb li {float:left; margin-left:30px;}
 
+.hd-top .tnb li a {vertical-align:top;}
+.hd-top .tnb .bell {position:relative; width:40px; height:40px; display:inline-block; font-size:0; background:url(../img/ico_bell.svg) center no-repeat; background-size:20px;}
+.hd-top .tnb .bell.on:before {position:absolute; top:8px; right:8px; width:5px; height:5px; border-radius:50%; background:#dd4040; content:''; animation:blink .5s ease-in-out infinite alternate; -webkit-animation:blink .5s ease-in-out infinite alternate; -moz-animation:blink .5s ease-in-out infinite alternate;}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+.hd-top .tnb .user-info {position:relative; width:40px; height:40px; font-size:0; display:inline-block; border-radius:50%; overflow:hidden; background:#e5e9ec;}
+.hd-top .tnb .user-info img {position:absolute; top:-30%; left:50%; transform:translateX(-50%);}
+
 .hd-top #btn-nav{margin-top: 20px;}
