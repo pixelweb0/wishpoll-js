@@ -1,8 +1,8 @@
-.contents > .notice-edit_h { font-family: 'scdream7'; font-size: 1.375rem;}
+.contents > .notice-edit_h { font-family: 'scdream6'; font-size: 1.375rem;}
 
 #notice-edit_write { overflow: hidden;}
 #notice-edit_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
-#notice-edit_write .item .title { position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+#notice-edit_write .item .title { position: relative; font-family: 'scdream5'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
 
 #notice-edit_write .item .desc input[type=text]{width: 100%;}
 
@@ -22,10 +22,10 @@
 
 #notice-edit_write .item .desc span.txt { display: inline-block; font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin: 0 10px;}
 
-#notice-edit_write .item .desc .input-group > input[type=date]{width: 200px;}
+#notice-edit_write .item .desc .input-group > input[type=date]{width: 140px;}
 #notice-edit_write .item .desc .input-group > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #notice-edit_write .item .desc .input-group > div > .aa{margin: 0 10px;}
-#notice-edit_write .item .desc .input-group > div > input[type=date]{width: 200px;}
+#notice-edit_write .item .desc .input-group > div > input[type=date]{width: 140px;}
 #notice-edit_write .item .desc .input-group > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 
 #notice-edit_write .item .desc .input-group>div{display: inline-block;}
@@ -50,7 +50,7 @@
 #notice-edit_write input[type=checkbox] + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top; padding-top: 2px;}
 #notice-edit_write input[type=checkbox] + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
 #notice-edit_write input[type=checkbox] + label:after { position: absolute; left: 0; top: 0; width: 23px; height: 23px; border: 1px solid #dadada; background: #fff; content: '';}
-#notice-edit_write input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 22px; background: #cf7afe; background-size: 100%; content: '';}
+#notice-edit_write input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 22px; border:0; background:url(/src/img/ico_chk_after.svg) center no-repeat #c684ff; background-size:60%; content: '';}
 
 #notice-edit_write .item .desc input[type=radio] + label.type2 { position: relative; min-width: auto; font-size: 0.875rem; color: #1f2233; line-height: normal; text-align: left; margin-right: 50px; padding: 0 0 0 33px; border-radius: 0; border: 0;}
 #notice-edit_write .item .desc input[type=radio] + label.type2:before { position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-radius: 50%; width: 20px; height: 20px; border: 1px solid #e8e8e8; background: #fff; transition: all 0.5s; content: '';}

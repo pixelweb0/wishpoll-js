@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
-import "./Scope.css";
+import "./DataTag.css";
 import Dropzone from 'react-dropzone';
 
 function TagData(){

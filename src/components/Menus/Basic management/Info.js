@@ -14,28 +14,28 @@ function Info(){
                                 <dt><span>INSTALL</span><span>NEW</span></dt>
                                 <dd><span>12,345</span><span>123</span></dd>
                             </dl>
-                            <span className="proportion up"><i></i>123</span>
+                            <span className="proportion up"><i><img src="/img/ico_proportion.svg" alt="" /></i>123</span>
                         </li>
                         <li>
                             <dl>
                                 <dt><span>RE-INSTALL</span><span>NEW</span></dt>
                                 <dd><span>123</span><span>2</span></dd>
                             </dl>
-                            <span className="proportion down"><i></i>2</span>
+                            <span className="proportion down"><i><img src="/img/ico_proportion.svg" alt="" /></i>2</span>
                         </li>
                         <li>
                             <dl>
                                 <dt><span>USER</span><span>NEW</span></dt>
                                 <dd><span>1,234</span><span>34</span></dd>
                             </dl>
-                            <span className="proportion up"><i></i>34</span>
+                            <span className="proportion up"><i><img src="/img/ico_proportion.svg" alt="" /></i>34</span>
                         </li>
                         <li>
                             <dl>
                                 <dt><span>POINT</span></dt>
                                 <dd><span>12,345</span></dd>
                             </dl>
-                            <span className="proportion up"><i></i>123</span>
+                            <span className="proportion up"><i><img src="/img/ico_proportion.svg" alt="" /></i>123</span>
                         </li>
                     </ul>
                 </section>

@@ -1,28 +1,64 @@
+* {font-weight:normal;}
+
+textarea {display:block; width:100%; min-height:200px; padding:20px;}
+
 .contents {position: relative; padding: 30px;}
 .contents h4 {font-family:'scdream6'; font-size:1.25rem;}
+.contents h4:nth-child(n+2) {margin-top:40px;}
 
 #abtest_write {overflow:hidden;}
-#abtest_write .balancegame_left {float:left; width:75%;}
+#abtest_write .abtest_left {float:left; width:75%;}
 #abtest_write .item {margin-top:10px; border:1px solid #e8e8e8; background:#fff;}
-#abtest_write .item .title {font-family: 'scdream6'; font-size:0.95rem; line-height:64px; padding:0 30px; border-bottom:1px solid #e8e8e8; font-weight: bold;}
-#abtest_write .item .desc {padding:20px 30px;}
-#abtest_write .item .desc input[type=date] {outline-color: #c684ff;width: 100%;height: 46px;font-size: 0.75rem;color: #1f2233;padding: 0 20px;border: 1px solid #ddd;transition: all 0.5s;vertical-align: middle;box-sizing: border-box;background: transparent;}
+#abtest_write .item .rightB {position:absolute !important; right:30px; top:50%; transform:translateY(-50%); font-family:'scdream4'; line-height:normal;}
+#abtest_write .item .title {position:relative; font-family: 'scdream5'; font-size:0.95rem; line-height:64px; padding:0 30px; border-bottom:1px solid #e8e8e8;}
+#abtest_write .item .desc {position:relative; padding:20px 30px;}
+#abtest_write .item .desc > div {position:relative;}
+#abtest_write .item .desc input[type=date] {outline-color: #c684ff;width:140px;height: 46px;font-size: 0.75rem;color: #1f2233;padding: 0 10px;border: 1px solid #ddd;transition: all 0.5s;vertical-align: middle;box-sizing: border-box;background: transparent;}
 #abtest_write .item .desc input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #abtest_write .item .desc input[type=text] {outline-color: #c684ff; width:100%; height: 46px; font-size: 0.75rem; color: #1f2233; padding: 0 20px; border: 1px solid #ddd; transition: all 0.5s; vertical-align: middle; box-sizing: border-box; background: transparent;}
-#abtest_write .item .desc input.w180{width: 180px; margin-right: 10px;}
-#abtest_write .item .desc #btnAtt {position:relative; width:280px; height:140px; display:inline-block; vertical-align:top; cursor:pointer; border: 1px dashed #ddd;}
+#abtest_write .item .desc input.w180{width: 180px;}
+#abtest_write .item .desc input.clock {width:140px; margin-left:10px; padding:0 10px; background:url(/src/img/ico_clock.svg) right 10px center no-repeat; background-size:18px;}
+#abtest_write .item .desc #btnAtt {position:relative; width:280px; height:140px; display:inline-block; vertical-align:top; cursor:pointer; border: 1px dashed #ddd; background:#fff;}
 #abtest_write .item .desc #btnAtt:before {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:2px; height:28px; background:#ddd; content:'';}
 #abtest_write .item .desc #btnAtt:after {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:28px; height:2px; background:#ddd; content:'';}
 #abtest_write .item .desc .img-photo #photo-view {position: absolute; left: 2rem; top: auto; display: inline-block;}
 #abtest_write .item .desc .img-photo #photo-view .preview-img{width: 280px; height: 140px; object-fit: cover;}
 #abtest_write .item .desc .img-photo #photo-view input[type=button].deleteImg {position: absolute; width: 280px; height: 2.3rem; bottom: 0; left: 0; background: black; color: white; font-size: 1rem; opacity: 0.7; cursor: pointer;}
-
 #abtest_write .item .desc .react-datepicker-wrapper{background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
 
-#abtest_write .item .desc input[type=radio]{display: none;}
+#abtest_write .item .img-photo-wrap {margin-bottom:30px;}
+#abtest_write .item .img-photo-wrap .img-photo {margin-top:10px;}
+
+#abtest_write .item .accordion {margin-top:20px; overflow:hidden; border:1px solid #e8e8e8; background:#f7f9fb;}
+#abtest_write .item .accordion .title {display:block; width:auto; height:auto; line-height:64px; padding:0 20px; border-bottom:0;}
+#abtest_write .item .accordion .title:before, #abtest_write .item .accordion .title:after {display:none;}
+#abtest_write .item .accordion i {position:absolute; top:50%; right:10px; transform:translateY(-50%);}
+#abtest_write .item .accordion i:before {position:absolute; right:10px; transform:rotate(-45deg); width:10px; height:10px; border-top:2px solid #333; border-right:2px solid #333; content:'';}
+#abtest_write .item .accordion .desc {height:100%; max-height:0; padding:0; overflow:hidden; transition:max-height .5s ease-in-out;}
+#abtest_write .item .accordion input[type=checkbox]:checked + label i {right:40px; transform:translateY(-50%) rotate(180deg);}
+#abtest_write .item .accordion input[type=checkbox]:checked + label + .desc {max-height:1000px; padding:20px 30px; border-top:1px solid #e8e8e8;}
+#abtest_write .item .accordion .desc dl {position:relative; padding-left:70px; padding-right:200px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #e8e8e8;}
+#abtest_write .item .accordion .desc dl:last-child {padding-bottom:0; margin-bottom:0; border:0;}
+#abtest_write .item .accordion .desc dt {position:absolute; left:0; top:14px; font-family:'scdream6'; font-size:0.875rem;}
+#abtest_write .item .accordion .desc dd {display:inline-block; width:45%; margin-bottom:5px;}
+#abtest_write .item .accordion .desc dd .txt {width:40px;}
+#abtest_write .item .accordion .desc dd input[type=text] {width:80px;background:#fff;}
+#abtest_write .item .accordion .desc .rightB {top:0; right:0; transform:none;}
+
+#abtest_write .item .desc input[type=radio] {display: none;}
 #abtest_write .item .desc input[type=radio]:checked + label { color: #fff; background: #c684ff;}
-#abtest_write .item .desc input[type=radio] + label { min-width: 140px; font-size: 0.875rem; color: #c684ff; line-height: 44px; text-align: center; margin-right: 10px; padding: 0 20px; display: inline-block; border-radius: 10px; border: 1px solid #c684ff; cursor: pointer; transition: all 0.5s;}
+#abtest_write .item .desc input[type=radio] + label { min-width: 140px; font-size: 0.875rem; color: #c684ff; line-height: 44px; text-align: center; margin:0 10px 5px 0; padding: 0 20px; display: inline-block; border-radius: 10px; border: 1px solid #c684ff; cursor: pointer; transition: all 0.5s;}
 #abtest_write .item .desc input[type=text].w100{width: 100px; margin-left: 10px; text-align: center;}
+
+#abtest_write .item input[type=checkbox] {display: none;}
+#abtest_write .item input[type=checkbox] + label { cursor: pointer; position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
+#abtest_write .item input[type=checkbox] + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
+#abtest_write .item input[type=checkbox] + label:after { position: absolute; left: 0; top: 0; width: 23px; height: 23px; border: 1px solid #dadada; background: #fff; content: '';}
+#abtest_write .item input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 21px; border:0; background:url(/src/img/ico_chk_after.svg) center no-repeat #c684ff; background-size:60%; content: '';}
+
+#abtest_write .interest input[type=checkbox] + label {min-width:140px; width:calc(100% / 8 - 10px); height:auto; font-size:0.875rem; color:#c684ff; line-height:44px; text-align:center; margin:0 10px 5px 0; padding:0; border-radius:10px; border:1px solid #c684ff; transition:all 0.5s;}
+#abtest_write .interest input[type=checkbox] + label:before, #abtest_write .interest input[type=checkbox] + label:after {display:none;}
+#abtest_write .interest input[type=checkbox]:checked + label {color:#fff; background:#c684ff;}
 
 /* emoji */
 #abtest_write .item .desc .react-input-emoji--container{border: none;}
@@ -36,7 +72,7 @@
 #abtest_write .item .desc input[type=file] {display:none;}
 #abtest_write .item .desc input.txtR {width:180px; text-align:right;}
 #abtest_write .item .desc input.txtR.no { background-color: #ddd;}
-#abtest_write .item .desc span.txt {display:inline-block; font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-left:10px; font-weight: bold;}
+#abtest_write .item .desc span.txt {display:inline-block; font-family:'scdream5'; font-size:0.875rem; line-height:46px; margin:0 10px;}
 #abtest_write .item .desc p.comment {font-size:0.75rem; color:#35b256; margin-top:10px;}
 
 #abtest_write .item .box-wrap {background: #f7f9fb;}
@@ -47,13 +83,16 @@
 #abtest_write .item .box-wrap #btnAtt2 { position: absolute; right: 5.5rem; top: 0.35rem; width: auto; height: auto; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer;}
 #abtest_write .item .box-wrap #btnAtt2:hover{background: #b46ef0; transition: all 0.5s;}
 #abtest_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background-size: 20px auto; z-index: 0;}
+#abtest_write .item .box-wrap .box.draggable {padding:20px; margin-bottom:-1px; border:1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move; z-index:0;}
+#abtest_write .item .box-wrap .box.draggable .tit a {position:absolute; top:13px; right:40px; width:20px; height:20px; text-indent:-999em; background:url(/src/img/ico_del.svg) no-repeat; background-size:auto 100%;}
+
 #abtest_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; font-weight: bold; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
 
 #abtest_write .item .desc .chkBox { position: relative; font-family: 'scdream3'; font-size: 0.875rem; margin-top: 10px;}
 #abtest_write .item .desc input[type=checkbox]#agr-chk + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #ddd; background: #fff; content: '';}
 #abtest_write .item .desc input[type=checkbox]#agr-chk + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
 #abtest_write .item .desc input[type=checkbox]#agr-chk {display: none;}
-#abtest_write .item .desc input[type=checkbox]#agr-chk:checked + label:after { position: absolute; top: 47%; left: 1px; transform: translateY(-45%); width: 20px; height: 20px; background-color: #b46ef0; background-size: 100%; content: '';}
+#abtest_write .item .desc input[type=checkbox]#agr-chk:checked + label:after { position: absolute; top: 47%; left: 1px; transform: translateY(-45%); width: 20px; height: 20px; border:0; background:url(/src/img/ico_chk_after.svg) center no-repeat #c684ff; background-size:60%; content: '';}
 
 #abtest_write .item .desc input[type=checkbox]#agr-chk2 + label:before { position: absolute; left: 0; top: -10px; width: 22px; height: 22px; border: 1px solid #ddd; background: #fff; content: '';}
 #abtest_write .item .desc input[type=checkbox]#agr-chk2 + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
@@ -70,10 +109,12 @@
 #abtest_write .item .desc .boxs #btnAtt2:before {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:2px; height:28px; background:#ddd; content:'';}
 #abtest_write .item .desc .boxs #btnAtt2:after {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:28px; height:2px; background:#ddd; content:'';}
 
-#balancegame_btn-wrap {text-align:center; margin-top:50px; justify-content: center; display: flex; align-items: center;}
-#balancegame_btn-wrap a {min-width:210px; display:inline-block; font-family:'scdream5'; color:#fff; line-height:56px; padding:0 20px; margin:0 5px; background:#cf7afe; transition:all 0.5s;}
-#balancegame_btn-wrap a:hover {background:#b46ef0;}
-#balancegame_btn-wrap .balancegame_registration-btn{border: none; cursor: pointer;}
+#abtest_btn-wrap {text-align:center; margin-top:50px; justify-content: center; display: flex; align-items: center;}
+#abtest_btn-wrap a {min-width:210px; display:inline-block; font-family:'scdream5'; color:#fff; line-height:56px; padding:0 20px; margin:0 5px; background:#cf7afe; transition:all 0.5s;}
+#abtest_btn-wrap a:hover {background:#b46ef0;}
+#abtest_btn-wrap .abtest_registration-btn{border: none; cursor: pointer;}
+
+#abtest_write a.btn-add {display:block; font-family:'scdream5'; line-height:54px; color:#c684ff; text-align:center; margin-top:10px; border:1px solid #c684ff; background:url(/src/img/ico_btnAdd.svg) left 30px center no-repeat; background-size:20px;}
 
 #abtest_write .right { width:25%; padding:0 20px; position: fixed; right: -30px; bottom: 1rem;}
 #abtest_write .preview {text-align:center; border: 1xp solid #333;}

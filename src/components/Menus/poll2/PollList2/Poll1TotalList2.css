@@ -24,7 +24,7 @@ input[type=file], input[type=url], input[type=number], input[type=date], textare
     height: 46px;
     font-size: 0.75rem;
     color: #1f2233;
-    padding: 0 20px;
+    padding: 0 10px;
     border: 1px solid #ddd;
     transition: all 0.5s;
     vertical-align: middle;

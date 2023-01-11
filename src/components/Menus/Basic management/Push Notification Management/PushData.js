@@ -56,7 +56,7 @@ function PushData(){
 								<input
 									type="date"
 									className="form-control start-date date"
-									format="yyyy-MM-dd"
+									format="YYYY-MM-DD"
 									locale={ko}
 									min={new Date().toISOString().slice(0, 10)}
 									onChange={(e) => setStart_Date(e.target.value)}
@@ -81,7 +81,7 @@ function PushData(){
 								<input
 									type="date"
 									className="form-control end-date date"
-									format="yyyy-MM-dd"
+									format="YYYY-MM-DD"
 									name="datepicker"
 									min={new Date().toISOString().slice(0, 10)}
 									value={End_Date || ''}
@@ -252,9 +252,9 @@ function PushData(){
 							<td className="num">700</td>
 							<td className="num">-</td>
 							<td className="management">
-								<Link to="/push-notification/push-report" className="btn btnReport">리포트</Link>
-								<a href="#" className="btn btnCopy2">복사</a>
-								<a href="#" className="btn btnDel">삭제</a>
+								<Link to="/push-notification/push-report" className="btn btnReport" title="리포트">리포트</Link>
+								<a href="#" className="btn btnCopy2" title="복사">복사</a>
+								<a href="#" className="btn btnDel" title="삭제">삭제</a>
 							</td>
 						</tr>
 						<tr>
@@ -271,9 +271,9 @@ function PushData(){
 							<td className="num">-</td>
 							<td className="num">-</td>
 							<td className="management">
-								<a href="#" className="btn btnReport">리포트</a>
-								<a href="#" className="btn btnCopy2">복사</a>
-								<a href="#" className="btn btnDel">삭제</a>
+								<a href="#" className="btn btnReport" title="리포트">리포트</a>
+								<a href="#" className="btn btnCopy2" title="복사">복사</a>
+								<a href="#" className="btn btnDel" title="삭제">삭제</a>
 							</td>
 						</tr>
 						<tr>
@@ -290,9 +290,9 @@ function PushData(){
 							<td className="num">700</td>
 							<td className="num">3</td>
 							<td className="management">
-								<a href="#" className="btn btnReport">리포트</a>
-								<a href="#" className="btn btnCopy2">복사</a>
-								<a href="#" className="btn btnDel">삭제</a>
+								<a href="#" className="btn btnReport" title="리포트">리포트</a>
+								<a href="#" className="btn btnCopy2" title="복사">복사</a>
+								<a href="#" className="btn btnDel" title="삭제">삭제</a>
 							</td>
 						</tr>
 					</tbody>

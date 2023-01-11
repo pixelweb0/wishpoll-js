@@ -12,7 +12,7 @@ input[type=email][disabled] {
 
 #registration_write {overflow: hidden;}
 #registration_write .item { margin-top: 10px; border: 1px solid #e8e8e8; background: #fff;}
-#registration_write .item .title { position: relative; font-family: 'scdream6'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
+#registration_write .item .title { position: relative; font-family: 'scdream5'; font-size: 0.875rem; line-height: 64px; padding: 0 30px; border-bottom: 1px solid #e8e8e8;}
 
 #registration_write .item .desc { font-family: 'scdream3'; font-size: 0.875rem; padding: 20px 30px;}
 #registration_write select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff;}
@@ -29,7 +29,7 @@ input[type=email][disabled] {
 #registration_write .item .desc input[type=radio]:checked + label.type2 { color: #c684ff; background: none;}
 
 #registration_write .item .desc .input-group > input[type=text]{width: 200px;}
-#registration_write .item .desc .input-group > input[type=date]{width: 200px;}
+#registration_write .item .desc .input-group > input[type=date]{width: 140px;}
 #registration_write .item .desc .input-group > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #registration_write .item .desc .input-group > .react-datepicker-wrapper{width: 200px; background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
 #registration_write .item .desc .input-group > .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}

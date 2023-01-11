@@ -1,5 +1,6 @@
 *, :before, :after {
     box-sizing: border-box;
+    font-weight:normal;
 }
 
 ul{
@@ -19,7 +20,7 @@ ul, ol, li {
 #popup_list table .reward {width:8%;}
 #popup_list table .people {width:8%;}
 #popup_list table .management {width:15%;}
-#popup_list table thead th {font-family:'scdream6'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
+#popup_list table thead th {font-family:'scdream5'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
 #popup_list table td {min-height:70px; font-size:0.875rem; text-align:center; padding:15px 0; border-bottom:1px solid #e8e8e8;}
 #popup_list table span.state {color:#b2b2b2; font-weight: bold;}
 #popup_list table span.state.stand {color:#1f2233;}
@@ -29,17 +30,17 @@ ul, ol, li {
 #popup_list table a.btn.btnCF {color:#fff; border:1px solid #cf7afe; background: #cf7afe; margin-right: 5px;}
 #popup_list table a.btn.btnL {color:#b2b2b2; border:1px solid #b2b2b2;}
 
-#popup_search { position: relative; padding: 30px 50px 20px; margin-bottom: 50px; border: 1px solid #e8e8e8; border-top: 3px solid #cf7afe; background: #fff;}
-#popup_search select {position: relative;height: 46px;font-size: 0.75rem;padding: 0 31px 0 10px;margin: 0;border: 1px solid #e8e8e8;border-radius: 0;vertical-align: middle; outline-color:#c684ff}
+#popup_search { position: relative; padding:20px 30px; margin-bottom: 50px; border: 1px solid #e8e8e8; border-top: 3px solid #cf7afe; background: #fff;}
+#popup_search select {position: relative;height: 46px;font-size: 0.75rem;padding: 0 31px 0 10px;margin: 0;border: 1px solid #e8e8e8;border-radius: 0;vertical-align: middle; outline-color:#c684ff; background:#fff;}
 #popup_search option {font-weight: normal;display: block;white-space: nowrap;min-height: 1.2em;padding: 0px 2px 1px;}
 
 #popup_search .search-form {display: inline-block; width: 50%;}
 #popup_search .search-form li:last-child {margin-bottom: 0;}
 #popup_search .search-form select {margin-right: 50px;}
 #popup_search .search-form li > div {display: inline-block; min-width: 48%;}
-#popup_search .search-form h4, #popup_search .sch-all h4 {font-family: 'scdream6'; font-size: 0.875rem; line-height: 46px; margin-right: 10px; display: inline-block; vertical-align: top;}
+#popup_search .search-form h4, #popup_search .sch-all h4 {font-family: 'scdream5'; font-size: 0.875rem; line-height: 46px; margin-right: 10px; display: inline-block; vertical-align: top;}
 #popup_search .search-form input[type=text]{width: 200px;}
-#popup_search .search-form input[type=date]{width: 200px;}
+#popup_search .search-form input[type=date]{width: 140px;}
 #popup_search .search-form input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #popup_search .search-form .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
 #popup_search .search-form .react-datepicker__tab-loop{display: inline-flex; z-index: 1000;}
@@ -69,12 +70,17 @@ ul, ol, li {
 .popup_pop1 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; background: rgba(0,0,0,.5); display: none;}
 .popup_pop1.on {display: block;}
 #popup_popup > div { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 800px; padding: 40px; background: #fff;}
-#popup_popup h1 { font-family: 'scdream7'; font-size: 1.75rem; margin-bottom: 30px;}
+#popup_popup h1 { font-family: 'scdream5'; font-size: 1.75rem; margin-bottom: 30px;}
 
 #popup_popup .cont { max-height: 400px; overflow-y: auto;}
 
 #popup_popup .sequence { position: relative; margin-top: 10px;}
-#popup_popup .sequence button { width: 22px; height: 22px; text-indent: -999em; margin-right: -6px; border: 1px solid #dcdde2; cursor: pointer;}
+#popup_popup .sequence button { width: 22px; height: 22px; text-indent: -999em; margin-right:-1px; border: 1px solid #dcdde2; cursor: pointer; transition:all 0.5s;}
+#popup_popup .sequence button.btn-up {background:url(/src/img/ico_btn_up.png) no-repeat; background-size:cover;}
+#popup_popup .sequence button.btn-top {background:url(/src/img/ico_btn_top.png) no-repeat; background-size:cover;}
+#popup_popup .sequence button.btn-down {transform:rotate(180deg); background:url(/src/img/ico_btn_up.png) no-repeat; background-size:cover;}
+#popup_popup .sequence button.btn-bottom {transform:rotate(180deg); background:url(/src/img/ico_btn_top.png) no-repeat; background-size:cover;}
+#popup_popup .sequence button:hover {opacity:0.5;}
 
 #popup_popup .pop-list { position: relative; border-top: 3px solid #c684ff; border-bottom: 1px solid #e8e8e8;}
 #popup_popup .pop-list li { position: relative; padding: 20px 30px; border-bottom: 1px solid #e8e8e8; overflow: hidden;}
@@ -86,7 +92,7 @@ ul, ol, li {
 #popup_popup .pop-list li .desc .chk input[type=checkbox] + label { cursor: pointer; position: relative; width: 22px; height: 22px; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
 #popup_popup .pop-list li .desc .chk input[type=checkbox] + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
 #popup_popup .pop-list li .desc .chk input[type=checkbox] + label:after { position: absolute; left: 0; top: 0; width: 23px; height: 23px; border: 1px solid #dadada; background: #fff; content: '';}
-#popup_popup .pop-list li .desc .chk input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 21px; background: #c684ff; content: '';}
+#popup_popup .pop-list li .desc .chk input[type=checkbox]:checked + label:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 22px; height: 21px; border:0; background:url(/src/img/ico_chk_after.svg) center no-repeat #c684ff; background-size:60%; content: '';}
 
 #popup_popup .pop-list li .desc .title {font-family: 'scdream6';}
 #popup_popup .pop-list li .thumb { position: relative; float: right; width: 28%; height: 150px; overflow: hidden;}

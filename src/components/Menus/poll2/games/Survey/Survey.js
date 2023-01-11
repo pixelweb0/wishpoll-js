@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
-import "./ChooseScore.css";
+import "./Survey.css";
 import Dropzone from 'react-dropzone';
 
 function Survey(){
@@ -220,8 +220,8 @@ function Survey(){
     return (
 		<>
 			<div className="contents">
-				<section id="choosescore_write">
-					<div className="choosescore_left">
+				<section id="survey_write">
+					<div className="survey_left">
 						<h4>리스트 노출 정보</h4>
 						<div className="item">
 							<p className="title">퀘스트 제목을 입력해주세요.</p>
@@ -293,7 +293,7 @@ function Survey(){
 							<p className="title">퀘스트 유형을 선택해주세요.<i></i></p>
 							<div className="desc">
 								<span><input type="radio" id="type-1" name="type" value="" /><label className="" for="type-1">A/B 테스트</label></span>
-								<span><input type="radio" id="type-2" name="type" value="" checked /><label className="" for="type-2">간편 설문</label></span>
+								<span><input type="radio" id="type-2" name="type" value="" /><label className="" for="type-2">간편 설문</label></span>
 								<span><input type="radio" id="type-3" name="type" value="" /><label className="" for="type-3">스티커 퀘스트</label></span>
 								<span><input type="radio" id="type-4" name="type" value="" /><label className="" for="type-4">미디어 업로드</label></span>
 								<span><input type="radio" id="type-5" name="type" value="" /><label className="" for="type-5">데이터 태그</label></span>
@@ -495,66 +495,60 @@ function Survey(){
 
 						<h4>퀘스트룸</h4>
 						<div className="item">
-							<p className="title">질문을 입력해주세요.<i></i></p>
+							<p className="title move">질문을 입력해주세요.</p>
+							<div className="desc">
+								<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
+								<div className="img-photo type2">
+									<Dropzone onDrop={acceptedFiles => {
+										console.log(acceptedFiles)
+										setImage(acceptedFiles[0]); 
+										handlefreeImage(acceptedFiles[0]);
+										}}>
+										{({getRootProps, getInputProps}) => (
+											<div id="btnAtt" {...getRootProps()}>
+												<input {...getInputProps()} />
+											</div>      
+										)}
+									</Dropzone>
+									{freeImage ? <div id="photo-view">
+										<img className="preview-img" src={freeImage} alt="preview-img"/>
+										<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+									</div> : null}
+								</div>
+								<p className="comment">권장 크기 : 1,000 x 500</p>
+							</div>
+
 							<div className="desc">
 								<div className="box-wrap">
-									<div className="box draggable" draggable="true">
-										<div className="tit img-photo-wrap">
-											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
-											<div className="img-photo">
-												<label id='btnAtt'><input type='file' multiple='multiple' /></label>
-												<div id="photo-view"></div>
-											</div>
-											<p className="comment">권장 크기 : 1000 x 500</p>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont">
-											<dl>
-												<dt>응답 옵션</dt>
-												<dd>
-													<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">단일 선택</label></span>
-													<span><input type="radio" id="option-2" name="option" value="" /><label className="" for="option-2">다중 선택</label></span>
-													<span><input type="radio" id="option-3" name="option" value="" /><label className="" for="option-3">순위 선택</label></span>
-												</dd>
-											</dl>
-											<dl>
-												<dt>선택 개수</dt>
-												<dd><span className="txt">최대</span><input type="text" className="w100p" name="" value="" /><span className="txt">개</span></dd>
-											</dl>
-										</div>
-										<div className="tit type2">
-											<p>
-												<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<span>
-												<select>
-													<option value="자격">자격</option>
-													<option value="실격">실격</option>
-												</select>
-											</span>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="tit type2">
-											<p>
-												<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<span>
-												<select>
-													<option value="자격">자격</option>
-													<option value="실격">실격</option>
-												</select>
-											</span>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<a href="#" className="btn-add">보기 추가하기</a>
+									<p className="title">응답옵션</p>
+									<div className="desc">
+										<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">단일 선택</label></span>
+										<span><input type="radio" id="option-2" name="option" value="" /><label className="" for="option-2">다중 선택</label></span>
+										<span><input type="radio" id="option-3" name="option" value="" /><label className="" for="option-3">순위 선택</label></span>
 									</div>
 								</div>
-								<a href="#" className="btn-add">객관식 문항 추가</a>
-								<a href="#" className="btn-add">척도 문항 추가</a>
-								<a href="#" className="btn-add">주관식 문항 추가</a>
+
+								<div className="box-wrap">
+									<p className="title">선택 개수</p>
+									<div className="desc">
+										<span className="txt">최대</span><input type="text" className="w100" name="" value="" /><span className="txt">개</span>
+									</div>
+								</div>
+
+								<div className="box-wrap">
+									<div className="desc draggable" draggable="true">
+										<p>
+											<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
+											<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
+										</p>
+										<select>
+											<option value="자격">자격</option>
+											<option value="실격">실격</option>
+										</select>
+										<a href="#" className="btn-del">삭제</a>
+									</div>
+								</div>
+								<button className="btn-add">보기 추가하기</button>
 							</div>
 						</div>
 						<div className="item">
@@ -598,9 +592,9 @@ function Survey(){
 						</div>
 					</div>
 				</section>
-				<section id="choosescore_btn-wrap">
-        	<form className="choosescore_registration-btn"><a className="choosescore_btn choosescore_btnL">임시 저장</a></form>
-          <form className="choosescore_registration-btn" onClick={onSubmitHandler}><a>등록</a></form>
+				<section id="survey_btn-wrap">
+        	<form className="survey_registration-btn"><a className="survey_btn survey_btnL">임시 저장</a></form>
+          <form className="survey_registration-btn" onClick={onSubmitHandler}><a>등록</a></form>
         </section>
 			</div>
 		</>

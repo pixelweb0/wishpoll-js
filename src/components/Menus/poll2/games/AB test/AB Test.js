@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
 import "./AbTest.css";
+import AddDiv from "./AddDiv";
 import Dropzone from 'react-dropzone';
 
 function ABTest(){
@@ -161,7 +162,7 @@ function ABTest(){
     const Scale_Mid_Text = null;
 	const Is_Using_Others = 0;
 	const Regist_M_Idx = null;
-	
+
 	//formData.append('files', )
 	formData.append('files', Image)
 	formData.append('files', Select_Image_1)
@@ -247,7 +248,7 @@ function ABTest(){
 		<>
 			<div className="contents">
 				<section id="abtest_write">
-					<div className="balancegame_left">
+					<div className="abtest_left">
 						<h4>리스트 노출 정보</h4>
 						<div className="item">
 							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
@@ -318,7 +319,7 @@ function ABTest(){
 						<div className="item">
 							<p className="title">퀘스트 유형을 선택해주세요.<i></i></p>
 							<div className="desc">
-								<span><input type="radio" id="type-1" name="type" value="" checked /><label className="" for="type-1">A/B 테스트</label></span>
+								<span><input type="radio" id="type-1" name="type" value="" /><label className="" for="type-1">A/B 테스트</label></span>
 								<span><input type="radio" id="type-2" name="type" value="" /><label className="" for="type-2">간편 설문</label></span>
 								<span><input type="radio" id="type-3" name="type" value="" /><label className="" for="type-3">스티커 퀘스트</label></span>
 								<span><input type="radio" id="type-4" name="type" value="" /><label className="" for="type-4">미디어 업로드</label></span>
@@ -359,6 +360,9 @@ function ABTest(){
 										closeOnScroll={true}
 									/> */}
 									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
+									<div class="rightB">
+										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -528,8 +532,21 @@ function ABTest(){
 										<div className="tit img-photo-wrap">
 											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
 											<div className="img-photo">
-												<label id='btnAtt'><input type='file' multiple='multiple' /></label>
-												<div id="photo-view"></div>
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setImage(acceptedFiles[0]);
+													handlefreeImage(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage ? <div id="photo-view">
+													<img className="preview-img" src={freeImage} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+												</div> : null}
 											</div>
 											<p className="comment">권장 크기 : 1000 x 500</p>
 											<a href="#" className="btn-del">삭제</a>
@@ -604,8 +621,8 @@ function ABTest(){
 						</div>
 					</div>
 				</section>
-				<section id="balancegame_btn-wrap">
-					<form className="balancegame_registration-btn" onClick={onSubmitHandler}><a>등록</a></form>
+				<section id="abtest_btn-wrap">
+					<form className="abtest_registration-btn" onClick={onSubmitHandler}><a>등록</a></form>
 				</section>
 			</div>
 		</>

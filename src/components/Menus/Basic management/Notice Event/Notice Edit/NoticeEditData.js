@@ -252,7 +252,7 @@ function NoticeEditData(){
 							<input
 								type="date"
 								className="form-control start-date date"
-								format="yyyy-MM-dd"
+								format="YYYY-MM-DD"
 								locale={ko}
 								min={new Date().toISOString().slice(0, 10)}
 								onChange={(e) => setStart_Date(e.target.value)}
@@ -304,7 +304,7 @@ function NoticeEditData(){
 								<input
 									type="date"
 									className="form-control end-date date"
-									format="yyyy-MM-dd"
+									format="YYYY-MM-DD"
 									name="datepicker"
 									min={new Date().toISOString().slice(0, 10)}
 									value={End_Date || ''}

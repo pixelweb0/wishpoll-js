@@ -1,10 +1,10 @@
 .hd-top {position:relative; padding:0 30px; background:#fff; box-shadow:2px 0 6px rgba(0,0,0,.06);}
-.hd-top .time {font-family:'scdream3'; font-size:0.75rem; line-height:40px; margin-left:10px;}
+.hd-top .time {font-family:'scdream3'; font-size:0.875rem; line-height:64px; margin-left:40px;}
 .hd-top .tnb {position:absolute; top:50%; right:30px; transform:translateY(-50%);}
 .hd-top .tnb li {float:left; margin-left:30px;}
 
 .hd-top .tnb li a {vertical-align:top;}
-.hd-top .tnb .bell {position:relative; width:40px; height:40px; display:inline-block; font-size:0; background:url(../img/ico_bell.svg) center no-repeat; background-size:20px;}
+.hd-top .tnb .bell {position:relative; width:40px; height:40px; display:inline-block; font-size:0; background:url(/src/img/ico_bell.svg) center no-repeat; background-size:20px;}
 .hd-top .tnb .bell.on:before {position:absolute; top:8px; right:8px; width:5px; height:5px; border-radius:50%; background:#dd4040; content:''; animation:blink .5s ease-in-out infinite alternate; -webkit-animation:blink .5s ease-in-out infinite alternate; -moz-animation:blink .5s ease-in-out infinite alternate;}
 @keyframes blink{
     0% {opacity:0;}
@@ -13,4 +13,4 @@
 .hd-top .tnb .user-info {position:relative; width:40px; height:40px; font-size:0; display:inline-block; border-radius:50%; overflow:hidden; background:#e5e9ec;}
 .hd-top .tnb .user-info img {position:absolute; top:-30%; left:50%; transform:translateX(-50%);}
 
-.hd-top #btn-nav{margin-top: 20px;}
+button#btn-nav {position:absolute; left:30px; top:0; width:20px; height:40px; font-size:0; display:inline-block; margin:12px auto; cursor:pointer; background:url(/src/img/ico_menu.svg) center no-repeat; background-size:20px; z-index:1;}

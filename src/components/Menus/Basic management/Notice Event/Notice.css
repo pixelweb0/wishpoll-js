@@ -69,19 +69,19 @@ input[type=file], input[type=url], input[type=number], input[type=date], textare
 
 #notice_search select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0 5px 0 5px; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff; outline-color:#c684ff;}
 
-#notice_search {position:relative; padding:30px 50px 20px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
+#notice_search {position:relative; padding:20px 30px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
 #notice_search .search-form {display: inline-block; width: 50%;}
 #notice_search .search-form li {margin-bottom:30px;}
 #notice_search .search-form select{margin-right: 50px;}
 #notice_search .search-form li > div { max-width: 90%; display: inline-block;}
 #notice_search .search-form li > div > span{margin: 0 5px;}
-#notice_search .search-form li > div > input[type=date]{width: 200px;}
+#notice_search .search-form li > div > input[type=date]{width: 140px;}
 #notice_search .search-form li > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #notice_search .search-form li > div > div input[type=text]{width: 200px;}
 #notice_search .search-form li > div > .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
 #notice_search .search-form li > div > .react-datepicker__tab-loop{position: fixed; z-index: 1000;}
 #notice_search .search-form li:last-child {margin-bottom:0;}
-#notice_search .search-form h4 {font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
+#notice_search .search-form h4 {font-family:'scdream5'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
 
 #notice_search .search-box {float:right; width:50%; text-align:right;}
 

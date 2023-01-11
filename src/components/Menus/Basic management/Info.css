@@ -13,9 +13,10 @@ section.m01 .proportion:before {position:absolute; left:0; font-family:'scdream3
 section.m01 .proportion.up {color:#35b256;}
 section.m01 .proportion.down {color:#dd4040;}
 section.m01 .proportion i {width:13px; height:13px; display:inline-block; margin-right:5px;}
+section.m01 .proportion img {height:100%; vertical-align:unset; filter:invert(56%) sepia(67%) saturate(491%) hue-rotate(83deg) brightness(91%) contrast(82%);}
+section.m01 .proportion.down img {transform:rotate(180deg); filter:invert(24%) sepia(84%) saturate(973%) hue-rotate(326deg) brightness(127%) contrast(101%);}
 section.m01 dt {margin-bottom:20px;}
 section.m01 dt span {position:relative; font-family:'scdream3'; font-size:0.875rem; color:#1f2233;}
-
 section.m01 dt span:nth-child(2), section.m01 dd span:nth-child(2) {position:relative; margin-left:15px; padding-left:15px;}
 section.m01 dt span:nth-child(2):before, section.m01 dd span:nth-child(2):before {position:absolute; font-family:'scdream1'; left:-3px; content:'|'}
 section.m01 dd {font-family:'scdream7'; font-size:1.375rem;}

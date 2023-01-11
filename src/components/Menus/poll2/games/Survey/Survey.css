@@ -1,0 +1,148 @@
+.contents {position: relative; padding: 30px;}
+
+#survey_write {overflow:hidden;}
+#survey_write .survey_left {float:left; width:75%;}
+#survey_write .item {margin-top:10px; border:1px solid #e8e8e8; background:#fff;}
+#survey_write .item .title {position:relative; font-family: 'scdream5'; font-size:0.95rem; line-height:64px; padding:0 30px; border-bottom:1px solid #e8e8e8;}
+#survey_write .item .title.move {background:url(/src/img/ico_menu.svg) right 30px center no-repeat; background-size:20px auto; cursor:move;}
+#survey_write .item .rightB {position:absolute !important; right:30px; top:50%; transform:translateY(-50%); font-family:'scdream4'; line-height:normal;}
+#survey_write .item .rightB input[type=checkbox] {display:none;}
+#survey_write .item .rightB label {position:relative; line-height:22px; padding-left:35px; display:inline-block; vertical-align:top; cursor:pointer;}
+#survey_write .item .rightB label:before {position:absolute; left:0; top:0; width:22px; height:22px; border:1px solid #ddd; content:'';}
+#survey_write .item .rightB label:after {position:absolute; left:0; top:0; width:23px; height:23px; border:1px solid #dadada; background:#fff; content:'';}
+#survey_write .item .rightB input[type=checkbox]:checked + label:after {position:absolute; top:47%; left:1px; transform:translateY(-45%); width:20px; height:20px; bordeR:0; background:url(/src/img/ico_chk_after.svg) center no-repeat #c684ff; background-size:60%; content:'';}
+#survey_write .item .desc {position:relative; padding:20px 30px;}
+#survey_write .item .desc.draggable {padding:20px 9.3rem 20px 30px;}
+#survey_write .item .desc.draggable p {position:relative;}
+#survey_write .item .desc.draggable select {position:absolute; top:20px; right:3.5rem;}
+#survey_write .item .desc.draggable a.btn-del {position:absolute; top:33px; right:20px; width:20px; height:20px; text-indent:-999em; background:url(/src/img/ico_del.svg) no-repeat; background-size:auto 100%;}
+#survey_write .item .desc > div {position:relative;}
+#survey_write .item .desc input[type=date] {outline-color: #c684ff;min-width:140px; height: 46px;font-size: 0.75rem;color: #1f2233; padding: 0 10px;border: 1px solid #ddd;transition: all 0.5s;vertical-align: middle;box-sizing: border-box;background: transparent;}
+#survey_write .item .desc input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
+#survey_write .item .desc input[type=text] {outline-color: #c684ff; width:100%; height: 46px; font-size: 0.75rem; color: #1f2233; padding: 0 20px; border: 1px solid #ddd; transition: all 0.5s; vertical-align: middle; box-sizing: border-box; background: transparent;}
+#survey_write .item .desc input.clock {width:140px; margin-lefT:10px; padding:0 10px; background:url(/src/img/ico_clock.svg) right 10px center no-repeat; background-size:18px;}
+#survey_write .item .desc input.w100{width: 100px;}
+#survey_write .item .desc input.w180{width: 180px;}
+#survey_write .item .desc #btnAtt {position:relative; width:280px; height:140px; display:inline-block; vertical-align:top; cursor:pointer; border: 1px dashed #e8e8e8; background:#fff;}
+#survey_write .item .desc #btnAtt:before {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:2px; height:28px; background:#e8e8e8; content:'';}
+#survey_write .item .desc #btnAtt:after {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:28px; height:2px; background:#e8e8e8; content:'';}
+#survey_write .item .desc .img-photo.type2 {margin-top:10px;}
+#survey_write .item .desc .img-photo #photo-view { position: absolute; left: 2rem; top: auto; display: inline-block;}
+#survey_write .item .desc .img-photo #photo-view .preview-img{width: 280px; height: 140px; object-fit: cover;}
+#survey_write .item .desc .img-photo #photo-view input[type=button].deleteImg {position: absolute; width: 280px; height: 2.3rem; bottom: 0; left: 0; background: black; color: white; font-size: 1rem; opacity: 0.7; cursor: pointer;}
+#survey_write .item .desc select { position: relative; height: 46px; font-size: 0.75rem; padding: 0 31px 0 10px; margin: 0; border: 1px solid #e8e8e8; border-radius: 0; vertical-align: middle; background: #fff;}
+
+#survey_write .item .desc input[type=radio]{display: none;}
+#survey_write .item .desc input[type=radio]:checked + label { color: #fff; background: #c684ff;}
+#survey_write .item .desc input[type=radio] + label { min-width: 140px; font-size: 0.875rem; color: #c684ff; line-height: 44px; text-align: center; margin:0 10px 5px 0; padding: 0 20px; display: inline-block; border-radius: 10px; border: 1px solid #c684ff; cursor: pointer; transition: all 0.5s;}
+#survey_write .item .desc input[type=text].w100{width: 100px; margin-left: 10px; text-align: center;}
+
+#survey_write .item .desc .react-datepicker-wrapper {background: url(../../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
+
+#survey_write .item .img-photo-wrap {margin-bottom:30px;}
+#survey_write .item .img-photo-wrap .img-photo {margin-top:10px;}
+
+#survey_write .item .accordion {margin-top:20px; overflow:hidden; border:1px solid #e8e8e8; background:#f7f9fb;}
+#survey_write .item .accordion .title {display:block; width:auto; height:auto; line-height:64px; padding:0 20px; border-bottom:0;}
+#survey_write .item .accordion .title:before, #survey_write .item .accordion .title:after {display:none;}
+#survey_write .item .accordion i {position:absolute; top:50%; right:10px; transform:translateY(-50%);}
+#survey_write .item .accordion i:before {position:absolute; right:10px; transform:rotate(-45deg); width:10px; height:10px; border-top:2px solid #333; border-right:2px solid #333; content:'';}
+#survey_write .item .accordion input[type=checkbox]:checked + label i {right:40px; transform:translateY(-50%) rotate(180deg);}
+#survey_write .item .accordion input[type=checkbox]:checked + label + .desc {max-height:1000px; padding:20px 30px; border-top:1px solid #e8e8e8;}
+#survey_write .item .accordion .desc {height:100%; max-height:0; padding:0; overflow:hidden; transition:max-height .5s ease-in-out;}
+#survey_write .item .accordion .desc dl {position:relative; padding-left:70px; padding-right:200px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #e8e8e8;}
+#survey_write .item .accordion .desc dl:last-child {padding-bottom:0; margin-bottom:0; border:0;}
+#survey_write .item .accordion .desc dt {position:absolute; left:0; top:14px; font-family:'scdream6'; font-size:0.875rem;}
+#survey_write .item .accordion .desc dd {display:inline-block; width:45%; margin-bottom:5px;}
+#survey_write .item .accordion .desc dd .txt {width:40px;}
+#survey_write .item .accordion .desc dd input[type=text] {width:80px;background:#fff;}
+#survey_write .item .accordion .desc .rightB {top:0; right:0; transform:none;}
+
+#survey_write .interest input[type=checkbox] + label {position:relative; display:inline-block; min-width:140px; width:calc(100% / 8 - 10px); height:auto; font-size:0.875rem; color:#c684ff; line-height:44px; text-align:center; margin:0 10px 5px 0; padding:0; border-radius:10px; border:1px solid #c684ff; transition:all 0.5s; cursor:pointer;}
+#survey_write .interest input[type=checkbox] + label:before, #survey_write .interest input[type=checkbox] + label:after {display:none;}
+#survey_write .interest input[type=checkbox]:checked + label {color:#fff; background:#c684ff;}
+
+/* emoji */
+#survey_write .item .desc .react-input-emoji--container{border: none;}
+#survey_write .item .desc .react-input-emoji--input{position: relative;  outline: none; border: 1px solid #ddd; height: 46px;}
+#survey_write .item .desc .react-input-emoji--button{position: absolute; top: 1rem; right: 0%; z-index: 1000;}
+#survey_write .item .desc .react-emoji{width: 100%;}
+#survey_write .item .desc .react-emoji-picker--wrapper{ position: absolute; bottom: 0; right: 0; height:300px; width: 400px; overflow: hidden; z-index: 10;}
+#survey_write .item .desc .react-emoji-picker { top: 19rem; left: 66rem; animation: slidein 0.1s ease-in-out; position: fixed;}
+
+#survey_write .item .desc input[type=file] {display:none;}
+#survey_write .item .desc input.txtR {width:180px; text-align:right;}
+#survey_write .item .desc input.txtR.no { background-color: #ddd;}
+#survey_write .item .desc span.txt {display:inline-block; font-family:'scdream5'; font-size:0.875rem; line-height:46px; margin:0 10px;}
+#survey_write .item .desc p.comment {font-size:0.75rem; color:#35b256; margin-top:10px;}
+#survey_write .item .desc .chkBox { position: relative; font-family: 'scdream3'; font-size: 0.875rem; margin-top: 10px;}
+#survey_write .item .desc .chkBox > input[type=checkbox] + label:before { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 1px solid #e8e8e8; background: #fff; content: '';}
+#survey_write .item .desc .chkBox > input[type=checkbox] + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
+#survey_write .item .desc .chkBox > input[type=checkbox] {display: none;}
+#survey_write .item .desc .chkBox > input[type=checkbox]:checked + label:after { position: absolute; top: 55%; left: 1px; transform: translateY(-50%); width: 22px; height: 22px; background-color: #b46ef0; background-size: 100%; content: '';}
+
+#survey_write .item .desc .chkBox2 { position: relative; font-family: 'scdream3'; font-size: 0.875rem; margin-top: 10px;}
+#survey_write .item .desc .chkBox2 > input[type=checkbox] + label:before { position: absolute; left: 0; top: -10px; width: 22px; height: 22px; border: 1px solid #ddd; background: #fff; content: '';}
+#survey_write .item .desc .chkBox2 > input[type=checkbox] + label { position: relative; line-height: 22px; padding-left: 35px; display: inline-block; vertical-align: top;}
+#survey_write .item .desc .chkBox2 > input[type=checkbox] {display: none;}
+#survey_write .item .desc .chkBox2 > input[type=checkbox]:checked + label:after { position: absolute; top: 55%; left: 1px; transform: translateY(-45%); width: 20px; height: 20px; background-color: #b46ef0; background-size: 100%; content: '';}
+
+
+#survey_write .preview .phone {position:relative; max-width:360px; height:46rem; max-height:730px; margin:0 auto; padding:1.3vh 1vw 1.5vh; background:url(../../../../../img/img_phone.svg) top center no-repeat; background-size:100%;}
+#survey_write .preview .phone .desc {position:relative; height:100%; max-height:690px; display: flex; justify-content: center; align-items: center;}
+#survey_write .right { width:25%; padding:0 20px; position: fixed; right: -30px; bottom: 1rem;}
+#survey_write .preview {text-align:center; border: 1xp solid #333;}
+#survey_write .preview h4 {font-family: 'scdream6'; font-size:1.25rem; margin:auto 30px;}
+
+#survey_write .preview .phone .desc .modal{box-shadow: 1px 1px 5px #d1d1d1; height: 20rem; width: 17rem; border-radius: 15px; margin-bottom: 10rem;}
+#survey_write .preview .phone .desc .modal .title{font-weight: bold; display: flex; margin: 10px 8px 5px 10px; font-size: 11px;}
+#survey_write .preview .phone .desc .modal img{ width: 15rem; height: 7rem; border-radius: 10px;}
+#survey_write .preview .phone .desc .modal ul.info{display: flex; justify-content: space-around; margin: 5px; align-items: center;  font-size: 10px;}
+#survey_write .preview .phone .desc .modal .date{display: flex; justify-content: center; font-size: 12px; color: rgba(68, 68, 68, 0.667); margin-bottom: 10px;}
+
+#survey_write .preview .phone .desc .modal .choose{margin-top: .5rem;}
+#survey_write .preview .phone .desc .modal .choose .top{display: flex; justify-content: space-between; padding: 10px 15px; font-size: 13px;}
+#survey_write .preview .phone .desc .modal .choose .bottom{display: flex; justify-content: space-around; gap: 8rem; margin-top: 10px; font-size: 13px;}
+#survey_write .preview .phone .desc .modal .progress-bar {width:100%;}
+#survey_write .preview .phone .desc .modal .progress-bar:after {position:absolute; top:50%; transform:translateY(-50%); left: 6%; width:14.9rem; height:10px; background:#c684ff; z-index:1; content:'';}
+#survey_write .preview .phone .desc .modal .progress-bar .top {font-size: 15px; position:absolute; top:30px; left:17%; transform:translateX(-50%);}
+#survey_write .preview .phone .desc .modal .progress-bar .bottom {position:absolute; bottom:0; left:50%; transform:translateX(-50%);}
+
+
+#survey_write .item .box-wrap {margin-top:10px; border:1px solid #e8e8e8; background: #f7f9fb;}
+#survey_write .item .box-wrap input[type=text] {background: #fff;}
+#survey_write .item .box-wrap input[type=radio] + label {background:#fff;}
+#survey_write .item .box-wrap .tit {position: relative; padding-right: 80px;}
+#survey_write .item .box-wrap .tit>button { position: absolute; top: 0.3rem; right: 1rem; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer; border: none;}
+#survey_write .item .box-wrap .tit>button:hover{background: #b46ef0; transition: all 0.5s;}
+#survey_write .item .box-wrap #btnAtt2 { position: absolute; right:0.5rem; top:50%; transform:translateY(-50%); width: auto; height: auto; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer;}
+#survey_write .item .box-wrap #btnAtt2:hover{background: #b46ef0; transition: all 0.5s;}
+#survey_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move;}
+#survey_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; font-weight: bold; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
+#survey_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background-size: 20px auto; z-index: 0;}
+#survey_write .item .box-wrap .box.draggable {padding:20px; margin-bottom:-1px; border:1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move; z-index:0;}
+#survey_write .item .box-wrap .box.draggable .tit a {position:absolute; top:13px; right:40px; width:20px; height:20px; text-indent:-999em; background:url(/src/img/ico_del.svg) no-repeat; background-size:auto 100%;}
+
+#survey_write .item .box.draggable dl {position:relative; padding:20px 0 20px 100px; margin-top:-1px; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;}
+#survey_write .item .box.draggable dt {position:absolute; left:20px; top:34px; font-family:'scdream6'; font-size:0.875rem;}
+
+#survey_write .item .desc .boxs>.comment.one{margin-bottom: 15px;}
+
+#survey_write .item .boxs{position: relative;}
+#survey_write .item .boxs #btnAtt2 { position: absolute; right: .6rem; top: 0.3rem; width: auto; height: auto; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer;}
+#survey_write .item .boxs #btnAtt2:hover{ background: #b46ef0; transition: all 0.5s;}
+
+#survey_write .item .progress-bar {display:table; table-layout:fixed; width:100%; margin:0;}
+#survey_write .item .progress-bar li {position:relative; display:table-cell; float:left; width:14.28%; text-align:center; font-weight: bold;}
+#survey_write .item .progress-bar li:before {position:relative; width:30px; height:30px; display:block; margin:60px auto; border-radius:50%; border:5px solid #c684ff; background:#fff; z-index:1; content:'';}
+#survey_write .item .progress-bar li:after {position:absolute; top:50%; transform:translateY(-50%); left:-50%; width:100%; height:10px; background:#f1e1ff; z-index:0; content:'';}
+#survey_write .item .progress-bar li:first-child:after {display:none;}
+#survey_write .item .progress-bar .top {position:absolute; top:0; left:50%; transform:translateX(-50%); font-size: 1.5rem;}
+#survey_write .item .progress-bar .bottom {position:absolute; bottom:0; left:50%; transform:translateX(-50%);}
+#survey_write .item .progress-bar input[type=text] {text-align:center; padding:0;}
+
+#survey_btn-wrap {text-align:center; margin-top:50px; justify-content: center; display: flex; align-items: center;}
+#survey_btn-wrap a {min-width:210px; display:inline-block; font-family:'scdream5'; color:#fff; line-height:56px; padding:0 20px; margin:0 5px; background:#cf7afe; transition:all 0.5s;}
+#survey_btn-wrap a:hover {background:#b46ef0;}
+#survey_btn-wrap .survey_registration-btn{border: none; cursor: pointer;}
+#survey_btn-wrap a.survey_btn.survey_btnL { color: #b2b2b2; border: 1px solid #b2b2b2; background: #fff;}

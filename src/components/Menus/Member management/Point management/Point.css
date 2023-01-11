@@ -42,10 +42,10 @@ input[type=file], input[type=url], input[type=number], input[type=date], textare
 #point_list table .reward {width:8%;}
 #point_list table .people {width:8%;}
 #point_list table .management {width:15%;}
-#point_list table thead th {font-family:'scdream6'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
+#point_list table thead th {font-family:'scdream5'; font-size:0.875rem; line-height:70px; border-bottom:1px solid #e8e8e8;}
 #point_list table tbody tr{cursor: pointer;}
 #point_list table td {min-height:70px; font-size:0.875rem; text-align:center; padding:15px 0; border-bottom:1px solid #e8e8e8;}
-#point_list table span.state {color:#b2b2b2; font-weight: bold;}
+#point_list table span.state {color:#b2b2b2;}
 #point_list table span.state.stand {color:#1f2233;}
 #point_list table span.state.ongoing {color:#35b256;}
 #point_list table span.state.complete {color:#dd4040;}
@@ -53,7 +53,7 @@ input[type=file], input[type=url], input[type=number], input[type=date], textare
 #point_list table a.btn.btnCF {color:#fff; border:1px solid #cf7afe; background: #cf7afe; margin-right: 5px;}
 #point_list table a.btn.btnL {color:#b2b2b2; border:1px solid #b2b2b2;}
 
-#point_search {position:relative; padding:30px 50px 20px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
+#point_search {position:relative; padding:20px 30px; margin-bottom:50px; border:1px solid #e8e8e8; border-top:3px solid #cf7afe; background:#fff; overflow:hidden;}
 #point_search .search-form {display: inline-block; width: 50%;}
 #point_search .search-form select{margin-right: 50px;}
 #point_search input[type=text].search-val { width: 50%; margin-left: 10px; padding: 0 60px 0 20px; background: url(../../../../img/ico_searchVal.svg) white right 20px center no-repeat; background-size: 20px;}
@@ -61,13 +61,13 @@ input[type=file], input[type=url], input[type=number], input[type=date], textare
 #point_search option { font-weight: normal; display: block; white-space: nowrap; min-height: 1.2em; padding: 0px 2px 1px;}
 #point_search .search-form li > div { max-width: 90%; display: inline-block;}
 #point_search .search-form li > div > span{margin: 0 5px;}
-#point_search .search-form li > div > input[type=date] {width: 200px;}
+#point_search .search-form li > div > input[type=date] {width: 140px;}
 #point_search .search-form li > div > input[type=date]::-webkit-calendar-picker-indicator{ font-size: 1.5rem;}
 #point_search .search-form li > div > div > div > input[type=text] {width: 200px;}
 #point_search .search-form li > div > .react-datepicker-wrapper{width: 200px; background: url(../../../../img/ico_calendar.svg) white right 20px center no-repeat; background-size: 20px;}
 #point_search .search-form li > div > .react-datepicker__tab-loop{position: fixed; z-index: 1000;}
 #point_search .search-form li:last-child {margin-bottom:0;}
-#point_search .search-form h4 {font-family:'scdream6'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
+#point_search .search-form h4 {font-family:'scdream5'; font-size:0.875rem; line-height:46px; margin-right:10px; margin-left:10px; display:inline-block; vertical-align:top;}
 
 #point_search .search-box {float:right; width:50%; text-align:right;}
 
