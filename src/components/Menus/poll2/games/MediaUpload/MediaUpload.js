@@ -288,27 +288,20 @@ function MediaUpload(){
     return (
         <>
 			<div className="contents">
-				<section id="multiple_write">
-					<div className="multiple_left">
+				<section id="media_write">
+					<div className="media_left">
 						<h4>리스트 노출 정보</h4>
 						<div className="item">
-							<p className="title">퀘스트 제목을 입력해주세요.</p>
+							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
 							<div className="desc">
 								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." onChange={e => setTitle(e.target.value)}/></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">지급 포인트를 입력해주세요.<i></i></p>
+							<p className="title">지급 포인트를 입력해주세요.</p>
 							<div className="desc">
-								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트1" />
-								<span className="txt">~</span>
-								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트2" />
-								<span className="txt">P</span>
-
-								<div className="rightB">
-									<input type="checkbox" id="agr-chk" name="" /><label for="agr-chk">범위 입력</label>
-								</div>
+								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트 입력" />
 							</div>
 						</div>
 						<div className="item">
@@ -318,18 +311,51 @@ function MediaUpload(){
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
+						<div className="item">
+							<p className="title">퀘스트 카테고리를 입력해주세요.</p>
+							<div className="desc">
+								<div><input type="text" id="" name="" placeholder="목록에서 보이는 설명입니다." /></div>
+							</div>
+						</div>
 
 						<h4>상세페이지 정보</h4>
 						<div className="item">
 							<p className="title">퀘스트 안내를 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="테스터에게 퀘스트를 설명해주세요." /></div>
+								<div><textarea style={{minHeight:"70px"}} placeholder="테스터에게 퀘스트를 설명해주세요."></textarea></div>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">유의사항을 입력해주세요.<i></i></p>
+							<p className="title">유의사항을 입력해주세요.
+								<span class="rightB">
+									<input type="checkbox" id="normal" name="" />
+									<label for="normal">기본 유의사항 전체 선택</label>
+								</span>
+							</p>
 							<div className="desc">
-								<div><textarea placeholder="✔ 성실하고 솔직하게 응답해주세요.&#13;&#10;✔ 퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다.&#13;&#10;✔ 불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다.&#13;&#10;✔ 본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다."></textarea></div>
+								<ul class="normal-note">
+									<li>
+										<span><input type="checkbox" id="normal-1" name="" /><label for="normal-1"></label></span>
+										<input type="text" id="" name="" placeholder="성실하고 솔직하게 응답해주세요." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-2" name="" /><label for="normal-2"></label></span>
+										<input type="text" id="" name="" placeholder="퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-3" name="" /><label for="normal-3"></label></span>
+										<input type="text" id="" name="" placeholder="불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
+										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
+										<input type="text" id="" name="" placeholder="유의사항5 입력" />
+									</li>
+								</ul>
+								<a href="#" class="btn-add">유의사항 추가</a>
 							</div>
 						</div>
 						<div className="item">
@@ -435,16 +461,122 @@ function MediaUpload(){
 									/> */}
 									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
 								</div>
+								<div class="rightB">
+										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+									</div>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">참여주기를 선택해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="cycle-chk" name="" /><label for="cycle-chk">1회 제한</label>
+								</span>
+							</p>
+							<div className="desc interest">
+								<span><input type="radio" id="cycle-1" name="cycle" value="" /><label className="" for="cycle-1">하루 3회</label></span>
+								<span><input type="radio" id="cycle-2" name="cycle" value="" /><label className="" for="cycle-2">하루 1회</label></span>
+								<span><input type="radio" id="cycle-3" name="cycle" value="" /><label className="" for="cycle-3">1시간</label></span>
+								<span><input type="radio" id="cycle-4" name="cycle" value="" /><label className="" for="cycle-4">15분</label></span>
 							</div>
 						</div>
 						<div className="item">
 							<p className="title">참여 인원수를 입력해주세요.</p>
 							<div className="desc">
-								<div><input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/><span className="txt">명</span></div>
-                <p className="chkBox"><input type="checkbox" id="agr-chk" name="" onClick={handlecheck}/><label htmlFor="agr-chk">참여 인원수 제한 없음</label></p>
+								<div>
+									<span className="txt">총</span>
+									<input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/>
+									<span className="txt">명</span>
+									<div className="rightB">
+										<input type="checkbox" id="panel-chk" name="" /><label for="panel-chk">패널 전용</label>
+									</div>
+								</div>
+								<div className="accordion">
+									<ul>
+										<li>
+											<input type="checkbox" id="numChk" hidden />
+											<label for="numChk" className="title"><span>상세 설정<i></i></span></label>
+
+											<div className="desc">
+												<dl>
+													<dt>성별</dt>
+													<dd>
+														<span className="txt">남성</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<dd>
+														<span className="txt">여성</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<div className="rightB">
+														<input type="checkbox" id="chk1" name="" /><label for="chk1">성별 구분 없음</label>
+													</div>
+												</dl>
+												<dl>
+													<dt>연령</dt>
+													<dd>
+														<span className="txt">10대</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<dd>
+														<span className="txt">20대</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<dd>
+														<span className="txt">30대</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<dd>
+														<span className="txt">40대</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<dd>
+														<span className="txt">50대+</span>
+														<input type="text" id="" className="w100p" name="" placeholder="인원수" />
+														<span className="txt">명</span>
+													</dd>
+													<div className="rightB">
+														<input type="checkbox" id="chk2" name="" /><label for="chk2">연령 구분 없음</label>
+													</div>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">분야를 선택해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="field-chk" name="" /><label for="field-chk">전체</label>
+								</span>
+							</p>
+							<div className="desc interest">
+								<span><input type="checkbox" id="field-1" name="field" value="" /><label className="" for="field-1">뷰티</label></span>
+								<span><input type="checkbox" id="field-2" name="field" value="" /><label className="" for="field-2">헬스</label></span>
+								<span><input type="checkbox" id="field-3" name="field" value="" /><label className="" for="field-3">패션/잡화</label></span>
+								<span><input type="checkbox" id="field-4" name="field" value="" /><label className="" for="field-4">전자제품</label></span>
+								<span><input type="checkbox" id="field-5" name="field" value="" /><label className="" for="field-5">주방가전</label></span>
+								<span><input type="checkbox" id="field-6" name="field" value="" /><label className="" for="field-6">테크</label></span>
+								<span><input type="checkbox" id="field-7" name="field" value="" /><label className="" for="field-7">유아동</label></span>
+								<span><input type="checkbox" id="field-8" name="field" value="" /><label className="" for="field-8">식품</label></span>
+								<span><input type="checkbox" id="field-9" name="field" value="" /><label className="" for="field-9">엔터테이먼트</label></span>
+								<span><input type="checkbox" id="field-10" name="field" value="" /><label className="" for="field-10">생활용품</label></span>
+								<span><input type="checkbox" id="field-11" name="field" value="" /><label className="" for="field-11">여행</label></span>
+								<span><input type="checkbox" id="field-12" name="field" value="" /><label className="" for="field-12">디자인</label></span>
+								<span><input type="checkbox" id="field-13" name="field" value="" /><label className="" for="field-13">의료/건강</label></span>
+								<span><input type="checkbox" id="field-14" name="field" value="" /><label className="" for="field-14">문화/예술</label></span>
+								<span><input type="checkbox" id="field-15" name="field" value="" /><label className="" for="field-15">반려동물</label></span>
+								<span><input type="checkbox" id="field-16" name="field" value="" /><label className="" for="field-16">기타</label></span>
 							</div>
 						</div>
 
+						{/*
 						<h4>인구통계 설정</h4>
 						<div className="item">
 							<p className="title">성별을 선택해주세요.
@@ -471,101 +603,92 @@ function MediaUpload(){
 								<span><input type="checkbox" id="age-5" name="age" value="" /><label className="" for="age-5">50대</label></span>
 							</div>
 						</div>
-						<div className="item">
-							<p className="title">분야를 선택해주세요.<i></i>
-								<span className="rightB">
-									<input type="checkbox" id="field-chk" name="" /><label for="field-chk">전체</label>
-								</span>
-							</p>
-							<div className="desc interest">
-								<span><input type="checkbox" id="field-1" name="field" value="" /><label className="" for="field-1">뷰티</label></span>
-								<span><input type="checkbox" id="field-2" name="field" value="" /><label className="" for="field-2">헬스</label></span>
-								<span><input type="checkbox" id="field-3" name="field" value="" /><label className="" for="field-3">패션/잡화</label></span>
-								<span><input type="checkbox" id="field-4" name="field" value="" /><label className="" for="field-4">전자제품</label></span>
-								<span><input type="checkbox" id="field-5" name="field" value="" /><label className="" for="field-5">주방가전</label></span>
-								<span><input type="checkbox" id="field-6" name="field" value="" /><label className="" for="field-6">테크</label></span>
-								<span><input type="checkbox" id="field-7" name="field" value="" /><label className="" for="field-7">유아동</label></span>
-								<span><input type="checkbox" id="field-8" name="field" value="" /><label className="" for="field-8">식품</label></span>
-								<span><input type="checkbox" id="field-9" name="field" value="" /><label className="" for="field-9">엔터테이먼트</label></span>
-								<span><input type="checkbox" id="field-10" name="field" value="" /><label className="" for="field-10">생활용품</label></span>
-								<span><input type="checkbox" id="field-11" name="field" value="" /><label className="" for="field-11">여행</label></span>
-								<span><input type="checkbox" id="field-12" name="field" value="" /><label className="" for="field-12">디자인</label></span>
-								<span><input type="checkbox" id="field-13" name="field" value="" /><label className="" for="field-13">의료/건강</label></span>
-								<span><input type="checkbox" id="field-14" name="field" value="" /><label className="" for="field-14">문화/예술</label></span>
-								<span><input type="checkbox" id="field-15" name="field" value="" /><label className="" for="field-15">반려동물</label></span>
-								<span><input type="checkbox" id="field-16" name="field" value="" /><label className="" for="field-16">기타</label></span>
-							</div>
-						</div>
+						*/}
 
 						<h4>퀘스트룸</h4>
 						<div className="item">
-							<p className="title">질문을 입력해주세요.<i></i></p>
+							<p className="title">퀘스트 내용을 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div className="box-wrap">
-									<div className="box draggable" draggable="true">
-										<div className="tit img-photo-wrap">
-											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
-											<div className="img-photo">
-												<label id='btnAtt'><input type='file' multiple='multiple' /></label>
-												<div id="photo-view"></div>
-											</div>
-											<p className="comment">권장 크기 : 1000 x 500</p>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont">
-											<dl>
-												<dt>응답 옵션</dt>
-												<dd>
-													<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">단일 선택</label></span>
-													<span><input type="radio" id="option-2" name="option" value="" /><label className="" for="option-2">다중 선택</label></span>
-													<span><input type="radio" id="option-3" name="option" value="" /><label className="" for="option-3">순위 선택</label></span>
-												</dd>
-											</dl>
-											<dl>
-												<dt>선택 개수</dt>
-												<dd><span className="txt">최대</span><input type="text" className="w100p" name="" value="" /><span className="txt">개</span></dd>
-											</dl>
-										</div>
-										<div className="tit type2">
-											<p>
-												<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<span>
-												<select>
-													<option value="자격">자격</option>
-													<option value="실격">실격</option>
-												</select>
-											</span>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="tit type2">
-											<p>
-												<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<span>
-												<select>
-													<option value="자격">자격</option>
-													<option value="실격">실격</option>
-												</select>
-											</span>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<a href="#" className="btn-add">보기 추가하기</a>
-									</div>
-								</div>
-								<a href="#" className="btn-add">객관식 문항 추가</a>
-								<a href="#" className="btn-add">척도 문항 추가</a>
-								<a href="#" className="btn-add">주관식 문항 추가</a>
+								<div><textarea style={{minHeight:"70px"}} placeholder="퀘스트 내용을 입력해주세요."></textarea></div>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">문항을 선택해주세요.</p>
+							<p className="title">미디어 종류를 선택해주세요.</p>
 							<div className="desc interest">
-								<span><input type="checkbox" id="question-1" name="question" value="" /><label className="" for="question-1">NPS 문항 추가</label></span>
-								<span><input type="checkbox" id="question-2" name="question" value="" /><label className="" for="question-2">PSM 문항 추가</label></span>
+								<span><input type="radio" id="type-1" name="type" value="" /><label className="" for="type-1">이미지 업로드</label></span>
+								<span><input type="radio" id="type-2" name="type" value="" /><label className="" for="type-2">사진 촬영</label></span>
+								<span><input type="radio" id="type-3" name="type" value="" /><label className="" for="type-3">동영상 업로드</label></span>
+								<span><input type="radio" id="type-4" name="type" value="" /><label className="" for="type-4">영상 촬영</label></span>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title move">제출 가이드라인 입력해주세요.</p>
+							<div className="desc">
+								<div className="img-photo type2">
+									<Dropzone onDrop={acceptedFiles => {
+										console.log(acceptedFiles)
+										setImage(acceptedFiles[0]); 
+										handlefreeImage(acceptedFiles[0]);
+										}}>
+										{({getRootProps, getInputProps}) => (
+											<div id="btnAtt" {...getRootProps()}>
+												<input {...getInputProps()} />
+											</div>      
+										)}
+									</Dropzone>
+									{freeImage ? <div id="photo-view">
+										<img className="preview-img" src={freeImage} alt="preview-img"/>
+										<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+									</div> : null}
+								</div>
+								<p className="comment">권장 크기 : 1,000 x 500</p>
+							</div>
+
+							<div className="desc">
+								<p class="random-wrap"><input type="checkbox" id="random" name="" /><label for="random">기본 가이드라인 전체 선택</label></p>
+								<ul class="normal-note">
+									<li>
+										<span><input type="checkbox" id="guideline-1" name="" /><label for="guideline-1"></label></span>
+										<input type="text" id="" name="" placeholder="대상이 잘 보이도록 밝은 곳에서 흔들리지 않게 촬영" />
+									</li>
+									<li>
+										<span><input type="checkbox" id="guideline-2" name="" /><label for="guideline-2"></label></span>
+										<input type="text" id="" name="" placeholder="대상의 전체 모습이 다 나오도록 촬영" />
+									</li>
+									<li>
+										<span><input type="checkbox" id="guideline-3" name="" /><label for="guideline-3"></label></span>
+										<input type="text" id="" name="" placeholder="타인이 나오지 않도록 주의" />
+									</li>
+									<li>
+										<span><input type="checkbox" id="guideline-4" name="" /><label for="guideline-4"></label></span>
+										<input type="text" id="" name="" placeholder="모니터 화면이 아닌 실제 대상 촬영" />
+									</li>
+								</ul>
+								<a href="#" className="btn-add">가이드라인 추가</a>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">미디어 수집 개수를 입력해주세요.</p>
+							<div className="desc interest">
+								<span class="txt">최소</span>
+								<span><input type="text" class="w100" id="" name="" value="" /></span>
+								<span class="txt">최소</span>
+								<span><input type="text" class="w100" id="" name="" value="" /></span>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">위치 수집 여부를 체크해주세요.</p>
+							<div className="desc interest">
+								<span><input type="radio" id="location-1" name="location" value="" /><label className="" for="location-1">없음</label></span>
+								<span><input type="radio" id="location-2" name="location" value="" /><label className="" for="location-2">수집</label></span>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">위치 수집 여부를 체크해주세요.</p>
+							<div className="desc interest">
+								<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">없음</label></span>
+								<span><input type="radio" id="option-2" name="option" value="" /><label className="" for="option-2">해시태그</label></span>
+								<span><input type="radio" id="option-3" name="option" value="" /><label className="" for="option-3">텍스트</label></span>
 							</div>
 						</div>
 					</div>
@@ -616,6 +739,7 @@ function MediaUpload(){
 					</div>
 				</section>
 				<section id="multiple_btn-wrap">
+					<form className="multiple_registration-btn"><a className="multiple_btn multiple_btnL">임시 저장</a></form>
 					<form className="multiple_registration-btn" onClick={onSubmitHandler} ><a>등록</a></form>
 				</section>
 			</div>

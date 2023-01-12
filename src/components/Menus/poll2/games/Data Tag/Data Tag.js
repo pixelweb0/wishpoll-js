@@ -193,27 +193,21 @@ function TagData(){
     return (
 		<>
 			<div className="contents">
-				<section id="scope_write">
-					<div className="scope_left">
+				<section id="data_write">
+					<div className="data_left">
 						<h4>리스트 노출 정보</h4>
 						<div className="item">
-							<p className="title">퀘스트 제목을 입력해주세요.</p>
+							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
 							<div className="desc">
 								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." onChange={e => setTitle(e.target.value)}/></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">지급 포인트를 입력해주세요.<i></i></p>
+							<p className="title">지급 포인트를 입력해주세요.</p>
 							<div className="desc">
-								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트1" />
-								<span className="txt">~</span>
-								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트2" />
+								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트 입력" />
 								<span className="txt">P</span>
-
-								<div className="rightB">
-									<input type="checkbox" id="agr-chk" name="" /><label for="agr-chk">범위 입력</label>
-								</div>
 							</div>
 						</div>
 						<div className="item">
@@ -228,13 +222,40 @@ function TagData(){
 						<div className="item">
 							<p className="title">퀘스트 안내를 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="테스터에게 퀘스트를 설명해주세요." /></div>
+								<div><textarea style={{minHeight:"70px"}} placeholder="테스터에게 퀘스트를 설명해주세요."></textarea></div>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">유의사항을 입력해주세요.<i></i></p>
+							<p className="title">유의사항을 입력해주세요.
+								<span class="rightB">
+									<input type="checkbox" id="normal" name="" />
+									<label for="normal">기본 유의사항 전체 선택</label>
+								</span>
+							</p>
 							<div className="desc">
-								<div><textarea placeholder="✔ 성실하고 솔직하게 응답해주세요.&#13;&#10;✔ 퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다.&#13;&#10;✔ 불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다.&#13;&#10;✔ 본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다."></textarea></div>
+								<ul class="normal-note">
+									<li>
+										<span><input type="checkbox" id="normal-1" name="" /><label for="normal-1"></label></span>
+										<input type="text" id="" name="" placeholder="성실하고 솔직하게 응답해주세요." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-2" name="" /><label for="normal-2"></label></span>
+										<input type="text" id="" name="" placeholder="퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-3" name="" /><label for="normal-3"></label></span>
+										<input type="text" id="" name="" placeholder="불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
+										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
+										<input type="text" id="" name="" placeholder="유의사항5 입력" />
+									</li>
+								</ul>
+								<a href="#" class="btn-add">유의사항 추가</a>
 							</div>
 						</div>
 						<div className="item">
@@ -339,6 +360,9 @@ function TagData(){
 										closeOnScroll={true}
 									/> */}
 									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
+									<div class="rightB">
+										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -373,7 +397,7 @@ function TagData(){
 														<span className="txt">명</span>
 													</dd>
 													<div className="rightB">
-														<input type="checkbox" id="chk1" name="" /><label for="chk1">성별 균등</label>
+														<input type="checkbox" id="chk1" name="" /><label for="chk1">성별 구분 없음</label>
 													</div>
 												</dl>
 												<dl>
@@ -404,40 +428,13 @@ function TagData(){
 														<span className="txt">명</span>
 													</dd>
 													<div className="rightB">
-														<input type="checkbox" id="chk2" name="" /><label for="chk2">연령 균등</label>
+														<input type="checkbox" id="chk2" name="" /><label for="chk2">연령 구분 없음</label>
 													</div>
 												</dl>
 											</div>
 										</li>
 									</ul>
 								</div>
-							</div>
-						</div>
-
-						<h4>인구통계 설정</h4>
-						<div className="item">
-							<p className="title">성별을 선택해주세요.
-								<span className="rightB">
-									<input type="checkbox" id="gender-chk" name="" /><label for="gender-chk">전체</label>
-								</span>
-							</p>
-							<div className="desc interest">
-								<span><input type="checkbox" id="gender-1" name="gender" value="" /><label className="" for="gender-1">남성</label></span>
-								<span><input type="checkbox" id="gender-2" name="gender" value="" /><label className="" for="gender-2">여성</label></span>
-							</div>
-						</div>
-						<div className="item">
-							<p className="title">연령을 선택해주세요.
-								<span className="rightB">
-									<input type="checkbox" id="age-chk" name="" /><label for="age-chk">전체</label>
-								</span>
-							</p>
-							<div className="desc interest">
-								<span><input type="checkbox" id="age-1" name="age" value="" /><label className="" for="age-1">10대</label></span>
-								<span><input type="checkbox" id="age-2" name="age" value="" /><label className="" for="age-2">20대</label></span>
-								<span><input type="checkbox" id="age-3" name="age" value="" /><label className="" for="age-3">30대</label></span>
-								<span><input type="checkbox" id="age-4" name="age" value="" /><label className="" for="age-4">40대</label></span>
-								<span><input type="checkbox" id="age-5" name="age" value="" /><label className="" for="age-5">50대</label></span>
 							</div>
 						</div>
 						<div className="item">
@@ -466,57 +463,109 @@ function TagData(){
 							</div>
 						</div>
 
+						{/*
+						<h4>인구통계 설정</h4>
+						<div className="item">
+							<p className="title">성별을 선택해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="gender-chk" name="" /><label for="gender-chk">전체</label>
+								</span>
+							</p>
+							<div className="desc interest">
+								<span><input type="checkbox" id="gender-1" name="gender" value="" /><label className="" for="gender-1">남성</label></span>
+								<span><input type="checkbox" id="gender-2" name="gender" value="" /><label className="" for="gender-2">여성</label></span>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">연령을 선택해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="age-chk" name="" /><label for="age-chk">전체</label>
+								</span>
+							</p>
+							<div className="desc interest">
+								<span><input type="checkbox" id="age-1" name="age" value="" /><label className="" for="age-1">10대</label></span>
+								<span><input type="checkbox" id="age-2" name="age" value="" /><label className="" for="age-2">20대</label></span>
+								<span><input type="checkbox" id="age-3" name="age" value="" /><label className="" for="age-3">30대</label></span>
+								<span><input type="checkbox" id="age-4" name="age" value="" /><label className="" for="age-4">40대</label></span>
+								<span><input type="checkbox" id="age-5" name="age" value="" /><label className="" for="age-5">50대</label></span>
+							</div>
+						</div>
+						*/}
+
 						<h4>퀘스트룸</h4>
 						<div className="item">
-							<p className="title">질문을 입력해주세요.<i></i></p>
+							<p className="title">퀘스트 내용을 입력해주세요.<i></i></p>
+							<div className="desc">
+								<div><textarea style={{minHeight:"70px"}} placeholder="퀘스트 내용을 입력해주세요."></textarea></div>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title move">예시 이미지를 업로드 해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="example-chk" name="" /><label for="example-chk">예시 사용하기</label>
+								</span>
+							</p>
+							<div className="desc">
+								<div className="img-photo type2">
+									<Dropzone onDrop={acceptedFiles => {
+										console.log(acceptedFiles)
+										setImage(acceptedFiles[0]); 
+										handlefreeImage(acceptedFiles[0]);
+										}}>
+										{({getRootProps, getInputProps}) => (
+											<div id="btnAtt" {...getRootProps()}>
+												<input {...getInputProps()} />
+											</div>      
+										)}
+									</Dropzone>
+									{freeImage ? <div id="photo-view">
+										<img className="preview-img" src={freeImage} alt="preview-img"/>
+										<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+									</div> : null}
+								</div>
+								<p className="comment">권장 크기 : 1,000 x 500</p>
+								<p><input type="text" id="" name="" placeholder="예시 텍스트 입력창" style={{marginTop:"20px"}} /></p>
+							</div>
+						</div>
+						<div className="item">
+							<p className="title">태깅 이미지를 업로드해주세요.<i></i></p>
 							<div className="desc">
 								<div className="box-wrap">
 									<div className="box draggable" draggable="true">
 										<div className="tit img-photo-wrap">
-											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
 											<div className="img-photo">
-												<label id='btnAtt'><input type='file' multiple='multiple' /></label>
-												<div id="photo-view"></div>
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setImage(acceptedFiles[0]);
+													handlefreeImage(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage ? <div id="photo-view">
+													<img className="preview-img" src={freeImage} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+												</div> : null}
 											</div>
 											<p className="comment">권장 크기 : 1000 x 500</p>
 											<a href="#" className="btn-del">삭제</a>
 										</div>
-										<div className="tit">
-											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
-									</div>
-									<div className="box draggable" draggable="true">
-										<div className="tit">
-											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
-									</div>
-									<div className="box draggable" draggable="true">
-										<div className="tit">
-											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-											</p>
-											<a href="#" className="btn-del">삭제</a>
-										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
 									</div>
 								</div>
-								<a href="#" className="btn-add">문항 추가하기</a>
+								<div class="box-wrap type2">
+									<p class="title">데이터 유형</p>
+									<div class="desc">
+										<span><input type="radio" id="Dtype-1" name="Dtype" value="" /><label className="" for="Dtype-1">해시태그</label></span>
+										<span><input type="radio" id="Dtype-2" name="Dtype" value="" /><label className="" for="Dtype-2">텍스트</label></span>
+									</div>
+								</div>
+								<a href="#" className="btn-add">태깅 이미지 추가</a>
 							</div>
 						</div>
+						<a href="#" className="btn-add">문항 추가</a>
 					</div>
 
 					<div className="right preview">
@@ -541,7 +590,8 @@ function TagData(){
 					</div>
 				</section>
 				<section id="scope_btn-wrap">
-					<form className="scope_registration-btn" onClick={onSubmitHandler} ><a>등록</a></form>
+					<form className="scope_registration-btn"><a className="scope_btn scope_btnL">임시 저장</a></form>
+					<form className="scope_registration-btn" onClick={onSubmitHandler} ><a>완료</a></form>
 				</section>
 			</div>
 		</>

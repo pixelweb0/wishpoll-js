@@ -330,9 +330,9 @@ function MulitpleChoice(){
 						</div>
 						<div className="item">
 							<p className="title">선택 개수를 입력해주세요.</p>
-							<div className="desc a">
+							<div className="desc">
 								<div><span className="txt">최대</span><input type="text" className="w100" value={Max_Choice || ""} onChange={handleMax_Choice}/><span className="txt">개</span></div>
-								<span className="gita"><input type="checkbox" id="answer-4" name="answer" onClick={Clickhandler}/><label htmlFor="answer-4" >기타 항목추가</label></span>
+								<span className="rightB"><input type="checkbox" id="answer-4" name="answer" onClick={Clickhandler}/><label htmlFor="answer-4" >기타 항목추가</label></span>
 							</div>
 						</div>
 						<div className="item" id="test">
@@ -446,7 +446,7 @@ function MulitpleChoice(){
 							<p className="title">참여 인원수</p>
 							<div className="desc">
 								<div><input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/><span className="txt">명</span></div>
-                                <p className="chkBox"><input type="checkbox" id="agr-chk" name="" onClick={handlecheck}/><label htmlFor="agr-chk">참여 인원수 제한 없음</label></p>
+                                <p className="rightB"><input type="checkbox" id="agr-chk" name="" onClick={handlecheck}/><label htmlFor="agr-chk">참여 인원수 제한 없음</label></p>
 							</div>
 						</div>
 						<div className="item">

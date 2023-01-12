@@ -224,14 +224,14 @@ function Survey(){
 					<div className="survey_left">
 						<h4>리스트 노출 정보</h4>
 						<div className="item">
-							<p className="title">퀘스트 제목을 입력해주세요.</p>
+							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="" onChange={e => setTitle(e.target.value)}/></div>
+								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." onChange={e => setTitle(e.target.value)}/></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">지급 포인트를 입력해주세요.<i></i></p>
+							<p className="title">지급 포인트를 입력해주세요.</p>
 							<div className="desc">
 								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트1" />
 								<span className="txt">~</span>
@@ -244,7 +244,7 @@ function Survey(){
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">한 줄 설명을 입력해주세요.</p>
+							<p className="title">한 줄 설명을 입력해주세요.<i></i></p>
 							<div className="desc">
 								<div><input type="text" id="" name="" placeholder="목록에서 보이는 설명입니다." /></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
@@ -255,13 +255,40 @@ function Survey(){
 						<div className="item">
 							<p className="title">퀘스트 안내를 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="테스터에게 퀘스트를 설명해주세요." /></div>
+								<div><textarea style={{minHeight:"70px"}} placeholder="테스터에게 퀘스트를 설명해주세요."></textarea></div>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">유의사항을 입력해주세요.<i></i></p>
+							<p className="title">유의사항을 입력해주세요.
+								<span class="rightB">
+									<input type="checkbox" id="normal" name="" />
+									<label for="normal">기본 유의사항 전체 선택</label>
+								</span>
+							</p>
 							<div className="desc">
-								<div><textarea placeholder="✔ 성실하고 솔직하게 응답해주세요.&#13;&#10;✔ 퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다.&#13;&#10;✔ 불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다.&#13;&#10;✔ 본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다."></textarea></div>
+								<ul class="normal-note">
+									<li>
+										<span><input type="checkbox" id="normal-1" name="" /><label for="normal-1"></label></span>
+										<input type="text" id="" name="" placeholder="성실하고 솔직하게 응답해주세요." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-2" name="" /><label for="normal-2"></label></span>
+										<input type="text" id="" name="" placeholder="퀘스트 제출 완료 후 자동으로 포인트가 적립됩니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-3" name="" /><label for="normal-3"></label></span>
+										<input type="text" id="" name="" placeholder="불성실한 답변이 발각될 경우, 지급되었던 포인트가 추후 회수될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
+										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
+									</li>
+									<li>
+										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
+										<input type="text" id="" name="" placeholder="유의사항5 입력" />
+									</li>
+								</ul>
+								<a href="#" class="btn-add">유의사항 추가</a>
 							</div>
 						</div>
 						<div className="item">
@@ -293,7 +320,7 @@ function Survey(){
 							<p className="title">퀘스트 유형을 선택해주세요.<i></i></p>
 							<div className="desc">
 								<span><input type="radio" id="type-1" name="type" value="" /><label className="" for="type-1">A/B 테스트</label></span>
-								<span><input type="radio" id="type-2" name="type" value="" /><label className="" for="type-2">간편 설문</label></span>
+								<span><input type="radio" id="type-2" name="type" value="" checked /><label className="" for="type-2">간편 설문</label></span>
 								<span><input type="radio" id="type-3" name="type" value="" /><label className="" for="type-3">스티커 퀘스트</label></span>
 								<span><input type="radio" id="type-4" name="type" value="" /><label className="" for="type-4">미디어 업로드</label></span>
 								<span><input type="radio" id="type-5" name="type" value="" /><label className="" for="type-5">데이터 태그</label></span>
@@ -366,6 +393,9 @@ function Survey(){
 										closeOnScroll={true}
 									/> */}
 									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
+									<div class="rightB">
+										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -400,7 +430,7 @@ function Survey(){
 														<span className="txt">명</span>
 													</dd>
 													<div className="rightB">
-														<input type="checkbox" id="chk1" name="" /><label for="chk1">성별 균등</label>
+														<input type="checkbox" id="chk1" name="" /><label for="chk1">성별 구분 없음</label>
 													</div>
 												</dl>
 												<dl>
@@ -431,7 +461,7 @@ function Survey(){
 														<span className="txt">명</span>
 													</dd>
 													<div className="rightB">
-														<input type="checkbox" id="chk2" name="" /><label for="chk2">연령 균등</label>
+														<input type="checkbox" id="chk2" name="" /><label for="chk2">연령 구분 없음</label>
 													</div>
 												</dl>
 											</div>
@@ -440,7 +470,33 @@ function Survey(){
 								</div>
 							</div>
 						</div>
+						<div className="item">
+							<p className="title">분야를 선택해주세요.
+								<span className="rightB">
+									<input type="checkbox" id="field-chk" name="" /><label for="field-chk">전체</label>
+								</span>
+							</p>
+							<div className="desc interest">
+								<span><input type="checkbox" id="field-1" name="field" value="" /><label className="" for="field-1">뷰티</label></span>
+								<span><input type="checkbox" id="field-2" name="field" value="" /><label className="" for="field-2">헬스</label></span>
+								<span><input type="checkbox" id="field-3" name="field" value="" /><label className="" for="field-3">패션/잡화</label></span>
+								<span><input type="checkbox" id="field-4" name="field" value="" /><label className="" for="field-4">전자제품</label></span>
+								<span><input type="checkbox" id="field-5" name="field" value="" /><label className="" for="field-5">주방가전</label></span>
+								<span><input type="checkbox" id="field-6" name="field" value="" /><label className="" for="field-6">테크</label></span>
+								<span><input type="checkbox" id="field-7" name="field" value="" /><label className="" for="field-7">유아동</label></span>
+								<span><input type="checkbox" id="field-8" name="field" value="" /><label className="" for="field-8">식품</label></span>
+								<span><input type="checkbox" id="field-9" name="field" value="" /><label className="" for="field-9">엔터테이먼트</label></span>
+								<span><input type="checkbox" id="field-10" name="field" value="" /><label className="" for="field-10">생활용품</label></span>
+								<span><input type="checkbox" id="field-11" name="field" value="" /><label className="" for="field-11">여행</label></span>
+								<span><input type="checkbox" id="field-12" name="field" value="" /><label className="" for="field-12">디자인</label></span>
+								<span><input type="checkbox" id="field-13" name="field" value="" /><label className="" for="field-13">의료/건강</label></span>
+								<span><input type="checkbox" id="field-14" name="field" value="" /><label className="" for="field-14">문화/예술</label></span>
+								<span><input type="checkbox" id="field-15" name="field" value="" /><label className="" for="field-15">반려동물</label></span>
+								<span><input type="checkbox" id="field-16" name="field" value="" /><label className="" for="field-16">기타</label></span>
+							</div>
+						</div>
 
+						{/*
 						<h4>인구통계 설정</h4>
 						<div className="item">
 							<p className="title">성별을 선택해주세요.
@@ -467,95 +523,90 @@ function Survey(){
 								<span><input type="checkbox" id="age-5" name="age" value="" /><label className="" for="age-5">50대</label></span>
 							</div>
 						</div>
-						<div className="item">
-							<p className="title">분야를 선택해주세요.<i></i>
-								<span className="rightB">
-									<input type="checkbox" id="field-chk" name="" /><label for="field-chk">전체</label>
-								</span>
-							</p>
-							<div className="desc interest">
-								<span><input type="checkbox" id="field-1" name="field" value="" /><label className="" for="field-1">뷰티</label></span>
-								<span><input type="checkbox" id="field-2" name="field" value="" /><label className="" for="field-2">헬스</label></span>
-								<span><input type="checkbox" id="field-3" name="field" value="" /><label className="" for="field-3">패션/잡화</label></span>
-								<span><input type="checkbox" id="field-4" name="field" value="" /><label className="" for="field-4">전자제품</label></span>
-								<span><input type="checkbox" id="field-5" name="field" value="" /><label className="" for="field-5">주방가전</label></span>
-								<span><input type="checkbox" id="field-6" name="field" value="" /><label className="" for="field-6">테크</label></span>
-								<span><input type="checkbox" id="field-7" name="field" value="" /><label className="" for="field-7">유아동</label></span>
-								<span><input type="checkbox" id="field-8" name="field" value="" /><label className="" for="field-8">식품</label></span>
-								<span><input type="checkbox" id="field-9" name="field" value="" /><label className="" for="field-9">엔터테이먼트</label></span>
-								<span><input type="checkbox" id="field-10" name="field" value="" /><label className="" for="field-10">생활용품</label></span>
-								<span><input type="checkbox" id="field-11" name="field" value="" /><label className="" for="field-11">여행</label></span>
-								<span><input type="checkbox" id="field-12" name="field" value="" /><label className="" for="field-12">디자인</label></span>
-								<span><input type="checkbox" id="field-13" name="field" value="" /><label className="" for="field-13">의료/건강</label></span>
-								<span><input type="checkbox" id="field-14" name="field" value="" /><label className="" for="field-14">문화/예술</label></span>
-								<span><input type="checkbox" id="field-15" name="field" value="" /><label className="" for="field-15">반려동물</label></span>
-								<span><input type="checkbox" id="field-16" name="field" value="" /><label className="" for="field-16">기타</label></span>
-							</div>
-						</div>
+						*/}
 
 						<h4>퀘스트룸</h4>
 						<div className="item">
-							<p className="title move">질문을 입력해주세요.</p>
-							<div className="desc">
-								<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
-								<div className="img-photo type2">
-									<Dropzone onDrop={acceptedFiles => {
-										console.log(acceptedFiles)
-										setImage(acceptedFiles[0]); 
-										handlefreeImage(acceptedFiles[0]);
-										}}>
-										{({getRootProps, getInputProps}) => (
-											<div id="btnAtt" {...getRootProps()}>
-												<input {...getInputProps()} />
-											</div>      
-										)}
-									</Dropzone>
-									{freeImage ? <div id="photo-view">
-										<img className="preview-img" src={freeImage} alt="preview-img"/>
-										<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
-									</div> : null}
-								</div>
-								<p className="comment">권장 크기 : 1,000 x 500</p>
-							</div>
-
+							<p className="title">질문을 입력해주세요.<i></i></p>
 							<div className="desc">
 								<div className="box-wrap">
-									<p className="title">응답옵션</p>
-									<div className="desc">
+									<div className="box draggable" draggable="true">
+										<div className="tit img-photo-wrap">
+											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
+											<div className="img-photo">
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setImage(acceptedFiles[0]);
+													handlefreeImage(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage ? <div id="photo-view">
+													<img className="preview-img" src={freeImage} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeImg}/>
+												</div> : null}
+											</div>
+											<p className="comment">권장 크기 : 1000 x 500</p>
+											<a href="#" className="btn-del">삭제</a>
+										</div>
+									</div>
+								</div>
+								<div class="box-wrap type2">
+									<p class="title">응답 옵션</p>
+									<div class="desc">
 										<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">단일 선택</label></span>
 										<span><input type="radio" id="option-2" name="option" value="" /><label className="" for="option-2">다중 선택</label></span>
 										<span><input type="radio" id="option-3" name="option" value="" /><label className="" for="option-3">순위 선택</label></span>
 									</div>
 								</div>
-
-								<div className="box-wrap">
-									<p className="title">선택 개수</p>
-									<div className="desc">
-										<span className="txt">최대</span><input type="text" className="w100" name="" value="" /><span className="txt">개</span>
+								<div class="box-wrap type2">
+									<p class="title">선택 개수</p>
+									<div class="desc">
+										<span class="txt">최대</span>
+										<span><input type="text" class="txtR" value="" /></span>
+										<span class="txt">개</span>
 									</div>
 								</div>
-
-								<div className="box-wrap">
-									<div className="desc draggable" draggable="true">
-										<p>
-											<input type="text" id="" className="" name="" placeholder="보기를 입력해주세요." />
-											<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
-										</p>
-										<select>
-											<option value="자격">자격</option>
-											<option value="실격">실격</option>
-										</select>
-										<a href="#" className="btn-del">삭제</a>
+								<div class="box-wrap">
+									<p class="random-wrap"><input type="checkbox" id="random" name="" /><label for="random">보기 랜덤 노출</label></p>
+									<div className="box draggable" draggable="true">
+										<div className="tit">
+											<p>
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
+												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
+											</p>
+											<select>
+												<option value="자격">자격</option>
+												<option value="실격">실격</option>
+											</select>
+											<a href="#" className="btn-del">삭제</a>
+										</div>
+										<div className="cont"><div id="photo-view2"></div></div>
+										<p className="comment">권장 크기 : 1,000 x 1,000</p>
+									</div>
+									<div className="box draggable" draggable="true">
+										<div className="tit">
+											<p>
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
+												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
+											</p>
+											<select>
+												<option value="자격">자격</option>
+												<option value="실격">실격</option>
+											</select>
+											<a href="#" className="btn-del">삭제</a>
+										</div>
+										<div className="cont"><div id="photo-view2"></div></div>
+										<p className="comment">권장 크기 : 1,000 x 1,000</p>
 									</div>
 								</div>
-								<button className="btn-add">보기 추가하기</button>
-							</div>
-						</div>
-						<div className="item">
-							<p className="title">문항을 선택해주세요.</p>
-							<div className="desc interest">
-								<span><input type="checkbox" id="question-1" name="question" value="" /><label className="" for="question-1">NPS 문항 추가</label></span>
-								<span><input type="checkbox" id="question-2" name="question" value="" /><label className="" for="question-2">PSM 문항 추가</label></span>
+								<a href="#" className="btn-add">객관식 문항 추가</a>
+								<a href="#" className="btn-add">척도 문항 추가</a>
+								<a href="#" className="btn-add">주관식 문항 추가</a>
 							</div>
 						</div>
 					</div>

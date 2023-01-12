@@ -103,6 +103,7 @@ const SidebarData = [
     {
         title:"2차 폴",
         icon: <BsIcons.BsListCheck size="22"/>,
+        path:"/poll-totallist2",
         childrens:[
             {
                 id: 1,
