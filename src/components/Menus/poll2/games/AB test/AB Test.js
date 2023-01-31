@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
 import "./AbTest.css";
-import AddDiv from "./AddDiv";
+import AddDiv from "./AddDivNote";
 import Dropzone from 'react-dropzone';
 
 function ABTest(){
@@ -13,8 +13,6 @@ function ABTest(){
 
 	const [Start_Date, setStart_Date] = useState(null);
 	const [End_Date, setEnd_Date] = useState(null);
-	
-	
 
 	const [Title, setTitle] = useState("");
 
@@ -125,6 +123,18 @@ function ABTest(){
 			console.log("NO CHECK")
 			setState(0)
 		}
+	}
+	
+	// div 추가
+	const [countDiv, setCountDiv] = useState([0]);
+
+	const onAddDetailDiv = () => {	
+		let countArr = [...countDiv]
+		let counter = countArr.slice(-1)[0]
+
+		counter += 1;
+		countArr.push(counter)
+		setCountDiv(countArr)
 	}
 
 	const [check, setCheck] = useState(false);
@@ -244,6 +254,15 @@ function ABTest(){
         // document.location.href="/polltotallist";
 	};
 
+
+	//보기 이미지
+		const [isToggleOpen, setToggle] = useState(false);
+		const toggleImage = () => {
+			setToggle(isToggleOpen => !isToggleOpen);
+		}
+
+	
+
     return (
 		<>
 			<div className="contents">
@@ -253,7 +272,7 @@ function ABTest(){
 						<div className="item">
 							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." onChange={e => setTitle(e.target.value)}/></div>
+								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." /></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
@@ -312,12 +331,19 @@ function ABTest(){
 										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
 										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
 									</li>
-									<li>
-										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
-										<input type="text" id="" name="" placeholder="유의사항5 입력" />
-									</li>
+									<AddDiv
+										countDiv={countDiv}
+										setSelect_1={setSelect_1}
+										setSelect_2={setSelect_2}
+										setSelect_Image_1={setSelect_Image_1}
+										setSelect_Image_2={setSelect_Image_2}
+										setfreeImage1={setfreeImage1}
+										setfreeImage2={setfreeImage2}
+									/>
+
 								</ul>
-								<a href="#" class="btn-add">유의사항 추가</a>
+								{countDiv.length - 1 < 7 ? <button className="btn-add" onClick={onAddDetailDiv}>유의사항 추가</button> : false}
+
 							</div>
 						</div>
 						<div className="item">
@@ -399,31 +425,19 @@ function ABTest(){
 									<input
 										type="date"
 										className="form-control end-date date"
+										readOnly={!check ? false : true}
 										format="yyyy-MM-dd"
 										name="datepicker"
 										min={new Date().toISOString().slice(0, 10)}
-                  						value={End_Date || ''}
+                  	value={End_Date || ''}
 										placehoder="퀘스트 종료일"
 										locale={ko}
 										onChange={(e) => setEnd_Date(e.target.value)}
+										
 									/>
-
-									{/* <DatePicker
-										className="form-control end-date date"
-										selected={End_Date}
-										onChange={date => setEnd_Date(date)}
-										selectsEnd
-										startDate={Start_Date}
-										endDate={End_Date}
-										minDate={Start_Date}
-										locale={ko}
-										dateFormat="yyyy년 MM월 dd일 (eee)"
-										placeholderText="퀘스트 종료일"
-										closeOnScroll={true}
-									/> */}
-									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
+									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간" readOnly={!check ? false : true} />
 									<div class="rightB">
-										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+										<input type="checkbox" id="date-chk" name="" onClick={handlecheck} /><label for="date-chk">기한 없음</label>
 									</div>
 								</div>
 							</div>
@@ -433,7 +447,7 @@ function ABTest(){
 							<div className="desc">
 								<div>
 									<span className="txt">총</span>
-									<input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/>
+									<input type="text" className="txtR" />
 									<span className="txt">명</span>
 									<div className="rightB">
 										<input type="checkbox" id="panel-chk" name="" /><label for="panel-chk">패널 전용</label>
@@ -443,7 +457,7 @@ function ABTest(){
 									<ul>
 										<li>
 											<input type="checkbox" id="numChk" hidden />
-											<label for="numChk" className="title"><span>상세 설정</span></label>
+											<label for="numChk" className="title"><span>상세 설정<i></i></span></label>
 
 											<div className="desc">
 												<dl>
@@ -561,7 +575,7 @@ function ABTest(){
 								<div className="box-wrap">
 									<div className="box draggable" draggable="true">
 										<div className="tit img-photo-wrap">
-											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
+											<input type="text" id="" name="" placeholder="질문을 입력해주세요." onChange={e => setTitle(e.target.value)} />
 											<div className="img-photo">
 												<Dropzone onDrop={acceptedFiles => {
 													console.log(acceptedFiles)
@@ -584,32 +598,69 @@ function ABTest(){
 										</div>
 									</div>
 								</div>
-								<div class="box-wrap">
+								<div className="box-wrap">
 									<p class="random-wrap"><input type="checkbox" id="random" name="" /><label for="random">보기 랜덤 노출</label></p>
 									<div className="box draggable" draggable="true">
 										<div className="tit">
 											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." onChange={handleSelect_Text_1} />
+												{/* <label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label> */}
+												<label id="btnAtt2"><span onClick={()=>toggleImage()}>이미지 추가</span></label>
 											</p>
 											<a href="#" className="btn-del">삭제</a>
 										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
+										<div className={isToggleOpen ? "img-photo on" : "img-photo off"}>
+											<div className="boxs boxsone">
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setSelect_Image_1(acceptedFiles[0]);
+													handlefreeImage1(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage1 ? <div id="photo-view">
+													<img className="preview-img" src={freeImage1} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeSelectImg1}/>
+												</div> : null}
+												<p className="comment">권장 크기: 1,000 x 1,000</p>
+											</div>
+										</div>
 									</div>
 									<div className="box draggable" draggable="true">
 										<div className="tit">
 											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." onChange={handleSelect_Text_2} />
 												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
 											</p>
 											<a href="#" className="btn-del">삭제</a>
 										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
+										<div className={isToggleOpen ? "img-photo on" : "img-photo off"}>
+											<div className="boxs">
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setSelect_Image_2(acceptedFiles[0]);
+													handlefreeImage2(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage2 ? <div id="photo-view">
+													<img className="preview-img" src={freeImage2} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeSelectImg2}/>
+												</div> : null}
+												<p className="comment">권장 크기: 1,000 x 1,000</p>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="box-wrap type2">
+								<div className="box-wrap type2">
 									<p class="title">추가수집</p>
 									<div class="desc">
 										<span><input type="radio" id="option-1" name="option" value="" /><label className="" for="option-1">없음</label></span>
@@ -626,13 +677,8 @@ function ABTest(){
 						<div className="phone">
 							<div className="desc">
 								<div className="modal">
-									<ul className="info">
-										<li>리워드: {Rewards}</li>
-										<li>참여 인원수: {Max_Personnel}명</li>
-										<li>밸런스 게임</li>
-									</ul>
+									<h2>둘 중에 하나만 골라 A or B!</h2>
 									<p className="title">{Title}</p>
-									<p className="date">날짜</p>
 									{Image === "" ? null : 
 										<div className="titleImg">
 											{freeImage && <img className="preview-img" src={freeImage} alt="preview-img"/>}

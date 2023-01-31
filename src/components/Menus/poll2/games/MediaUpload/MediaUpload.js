@@ -4,7 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
 import "./MediaUpload.css";
-import AddDiv from "./AddDiv";
+import AddDiv from "./AddDivNote";
+import AddDivGuide from "./AddDivGuide";
 import Dropzone from 'react-dropzone';
 
 function MediaUpload(){
@@ -128,6 +129,30 @@ function MediaUpload(){
 
 		setCountDiv(newDiaryList);
 	};
+
+		
+	// div 추가
+	const [countDiv2, setCountDiv2] = useState([0]);
+
+	const onAddDetailDiv2 = () => {	
+		let countArr = [...countDiv2]
+		let counter = countArr.slice(-1)[0]
+
+		counter += 1;
+		countArr.push(counter)
+		setCountDiv2(countArr)
+	}
+
+	const onRemove2 = (targetId) => {
+		console.log(`${targetId.i}가 삭제됩니다`)
+
+		let countArr = [...countDiv2]
+
+		const newDiaryList = countArr.filter(countDiv2 => countDiv2 !== targetId.i);
+
+		setCountDiv2(newDiaryList);
+	};
+
 
 	const [Type, setType] = useState("");
 
@@ -302,6 +327,7 @@ function MediaUpload(){
 							<p className="title">지급 포인트를 입력해주세요.</p>
 							<div className="desc">
 								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트 입력" />
+								<span className="txt">P</span>
 							</div>
 						</div>
 						<div className="item">
@@ -350,12 +376,19 @@ function MediaUpload(){
 										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
 										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
 									</li>
-									<li>
-										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
-										<input type="text" id="" name="" placeholder="유의사항5 입력" />
-									</li>
+									<AddDiv
+										countDiv={countDiv}
+										setSelect_1={setSelect_1}
+										setSelect_2={setSelect_2}
+										setSelect_Image_1={setSelect_Image_1}
+										setSelect_Image_2={setSelect_Image_2}
+										setfreeImage1={setfreeImage1}
+										setfreeImage2={setfreeImage2}
+									/>
 								</ul>
-								<a href="#" class="btn-add">유의사항 추가</a>
+
+								{countDiv.length - 1 < 7 ? <button className="btn-add" onClick={onAddDetailDiv}>유의사항 추가</button> : false}
+
 							</div>
 						</div>
 						<div className="item">
@@ -437,33 +470,21 @@ function MediaUpload(){
 									<input
 										type="date"
 										className="form-control end-date date"
+										readOnly={!check ? false : true}
 										format="yyyy-MM-dd"
 										name="datepicker"
 										min={new Date().toISOString().slice(0, 10)}
-                  						value={End_Date || ''}
+                  	value={End_Date || ''}
 										placehoder="퀘스트 종료일"
 										locale={ko}
 										onChange={(e) => setEnd_Date(e.target.value)}
+										
 									/>
-
-									{/* <DatePicker
-										className="form-control end-date date"
-										selected={End_Date}
-										onChange={date => setEnd_Date(date)}
-										selectsEnd
-										startDate={Start_Date}
-										endDate={End_Date}
-										minDate={Start_Date}
-										locale={ko}
-										dateFormat="yyyy년 MM월 dd일 (eee)"
-										placeholderText="퀘스트 종료일"
-										closeOnScroll={true}
-									/> */}
-									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
-								</div>
-								<div class="rightB">
-										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간" readOnly={!check ? false : true} />
+									<div class="rightB">
+										<input type="checkbox" id="date-chk" name="" onClick={handlecheck} /><label for="date-chk">기한 없음</label>
 									</div>
+								</div>
 							</div>
 						</div>
 						<div className="item">
@@ -484,7 +505,7 @@ function MediaUpload(){
 							<div className="desc">
 								<div>
 									<span className="txt">총</span>
-									<input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/>
+									<input type="text" className={!check ? "txtR" : "txtR no"} />
 									<span className="txt">명</span>
 									<div className="rightB">
 										<input type="checkbox" id="panel-chk" name="" /><label for="panel-chk">패널 전용</label>
@@ -663,8 +684,11 @@ function MediaUpload(){
 										<span><input type="checkbox" id="guideline-4" name="" /><label for="guideline-4"></label></span>
 										<input type="text" id="" name="" placeholder="모니터 화면이 아닌 실제 대상 촬영" />
 									</li>
+									<AddDivGuide
+										countDiv2={countDiv2}
+									/>
 								</ul>
-								<a href="#" className="btn-add">가이드라인 추가</a>
+								{countDiv2.length - 1 < 7 ? <button className="btn-add" onClick={onAddDetailDiv2}>가이드라인 추가</button> : false}
 							</div>
 						</div>
 						<div className="item">
@@ -698,6 +722,19 @@ function MediaUpload(){
 						<div className="phone">
 							<div className="desc">
 								<div className="modal">
+									<h2>{Title}</h2>
+									<div class="guide-wrap">
+										<p>이미지 가이드 내용을 확인 후 촬영해 주세요!</p>
+										<div class="guide-image">
+											<span>이미지 가이드</span>
+											<p>이미지박스</p>
+											<ul>
+												<li>촬영 안내1</li>
+												<li>촬영 안내2</li>
+												<li></li>
+											</ul>
+										</div>
+									</div>
 									<ul className="info">
 										<li>리워드: {Rewards === NaN ? 0 : Rewards}</li>
 										<li>참여 인원수: {Max_Personnel}명</li>

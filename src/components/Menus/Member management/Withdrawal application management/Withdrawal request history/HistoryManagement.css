@@ -1,8 +1,8 @@
-input[type=tel][readonly], input[type=text][readonly],
+input[type=date][readonly], input[type=tel][readonly], input[type=text][readonly],
 input[type=password][readonly], input[type=email][readonly],
 input[type=search][readonly], input[type=tel][disabled], input[type=text][disabled],
 input[type=password][disabled], input[type=search][disabled], input[type=email][disabled] {
-    background: #eaeaea;
+    background-color: #eaeaea !important;
     border-color: #c0c0c0;
     color: #666;
 }

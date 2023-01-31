@@ -52,9 +52,9 @@
 #survey_write .item .accordion {margin-top:20px; overflow:hidden; border:1px solid #e8e8e8; background:#f7f9fb;}
 #survey_write .item .accordion .title {display:block; width:auto; height:auto; line-height:64px; padding:0 20px; border-bottom:0;}
 #survey_write .item .accordion .title:before, #survey_write .item .accordion .title:after {display:none;}
-#survey_write .item .accordion i {position:absolute; top:50%; right:10px; transform:translateY(-50%);}
-#survey_write .item .accordion i:before {position:absolute; right:10px; transform:rotate(-45deg); width:10px; height:10px; border-top:2px solid #333; border-right:2px solid #333; content:'';}
-#survey_write .item .accordion input[type=checkbox]:checked + label i {right:40px; transform:translateY(-50%) rotate(180deg);}
+#survey_write .item .accordion i {position:absolute; top:50%; right:20px; transform:translateY(-50%); width:20px; height:20px;}
+#survey_write .item .accordion i:before {position:absolute; top:3px; right:5px; transform:rotate(45deg); width:10px; height:10px; border-bottom:2px solid #333; border-right:2px solid #333; content:'';}
+#survey_write .item .accordion input[type=checkbox]:checked + label i {right:20px; transform:translateY(-50%) rotate(180deg);}
 #survey_write .item .accordion input[type=checkbox]:checked + label + .desc {max-height:1000px; padding:20px 30px; border-top:1px solid #e8e8e8;}
 #survey_write .item .accordion .desc {height:100%; max-height:0; padding:0; overflow:hidden; transition:max-height .5s ease-in-out;}
 #survey_write .item .accordion .desc dl {position:relative; padding-left:70px; padding-right:200px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #e8e8e8;}
@@ -102,7 +102,7 @@
 
 
 #survey_write .preview .phone {position:relative; max-width:360px; height:46rem; max-height:730px; margin:0 auto; padding:1.3vh 1vw 1.5vh; background:url(../../../../../img/img_phone.svg) top center no-repeat; background-size:100%;}
-#survey_write .preview .phone .desc {position:relative; height:100%; max-height:690px; display: flex; justify-content: center; align-items: center;}
+#survey_write .preview .phone .desc {height:100%; max-height:690px; display:flex; justify-content:center; align-items:top;}
 #survey_write .right { width:25%; padding:0 20px; position: fixed; right: -30px; bottom: 1rem;}
 #survey_write .preview {text-align:center; border: 1xp solid #333;}
 #survey_write .preview h4 {font-family: 'scdream6'; font-size:1.25rem; margin:auto 30px;}
@@ -125,18 +125,21 @@
 #survey_write .item .box-wrap.type2 {border:1px solid #e8e8e8;}
 #survey_write .item .box-wrap input[type=text] {background: #fff;}
 #survey_write .item .box-wrap input[type=radio] + label {background:#fff;}
-#survey_write .item .box-wrap .tit {position: relative; padding-right:10.3rem;}
+#survey_write .item .box-wrap .tit {position: relative; padding-right:5rem;}
 #survey_write .item .box-wrap .tit p {position:relative;}
 #survey_write .item .box-wrap .tit>button { position: absolute; top: 0.3rem; right: 1rem; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer; border: none;}
 #survey_write .item .box-wrap .tit>button:hover{background: #b46ef0; transition: all 0.5s;}
 #survey_write .item .box-wrap #btnAtt2 { position: absolute; right:0.5rem; top:50%; transform:translateY(-50%); width: auto; height: auto; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer;}
 #survey_write .item .box-wrap #btnAtt2:hover{background: #b46ef0; transition: all 0.5s;}
 #survey_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move;}
-#survey_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; font-weight: bold; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
+#survey_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
 #survey_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background-size: 20px auto; z-index: 0;}
 #survey_write .item .box-wrap .box.draggable {padding:20px; margin-bottom:-1px; border:1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move; z-index:0;}
 #survey_write .item .box-wrap .box.draggable .tit a {position:absolute; top:13px; right:40px; width:20px; height:20px; text-indent:-999em; background:url(/src/img/ico_del.svg) no-repeat; background-size:auto 100%;}
 #survey_write .item .box-wrap .box.draggable select {position:absolute; right:4.5rem; top:0;}
+
+#survey_write .item .box-wrap .box.draggable .img-photo.off {height:100%; max-height:0; padding:0; overflow:hidden; transition:all 0.5s;}
+#survey_write .item .box-wrap .box.draggable .img-photo.on {margin-top:10px; max-height:1000px;}
 
 #survey_write .item .box.draggable dl {position:relative; padding:20px 0 20px 100px; margin-top:-1px; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;}
 #survey_write .item .box.draggable dt {position:absolute; left:20px; top:34px; font-family:'scdream6'; font-size:0.875rem;}

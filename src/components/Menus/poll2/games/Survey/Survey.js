@@ -4,49 +4,67 @@ import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
 import "./Survey.css";
+import AddDiv from "./AddDivNote";
 import Dropzone from 'react-dropzone';
 
 function Survey(){
+	// 파일 업로드를 위한  폼데이터 
 	const formData = new FormData();
 
-    const [Start_Date, setStart_Date] = useState(null);
+	const [Start_Date, setStart_Date] = useState(null);
 	const [End_Date, setEnd_Date] = useState(null);
-	
+
 	const [Title, setTitle] = useState("");
 
-	const [Rewards, setRewards] = useState(Number);
+	const [Select_1, setSelect_1] = useState("");
+    const handleSelect_Text_1 = (e) => {
+        setSelect_1(e.target.value);
+    }
+
+	
+
+	const [Select_2, setSelect_2] = useState("");
+    const handleSelect_Text_2 = (e) => {
+        setSelect_2(e.target.value);
+    }
+
+	const [Rewards, setRewards] = useState();
 	const handleRewards = (e) => {
+
 		if(!parseInt(e.target.value)){
-			setRewards(0)
-		} else{
+			setRewards(0);
+		}else{
 			setRewards(parseInt(e.target.value));
 		}
 		
 	}
 
-	const [Max_Personnel, setMax_Personnel] = useState(Number);
-    const handleMax_Personnel = (e) => {
-		if(!parseInt(e.target.value)){
-			setMax_Personnel(0)
-		} else{
-			setMax_Personnel(parseInt(e.target.value))
-		}
-        
-    }
+	const [Max_Personnel, setMax_Personnel] = useState();
+	const handleMax_Personnel = (e) => {
 
-	const [Image, setImage] = useState("");
+		if(!parseInt(e.target.value)){
+			setMax_Personnel(0);
+		}else{
+			setMax_Personnel(parseInt(e.target.value));
+		}
+	}
+
+	const [Image, setImage] = useState('');
 
 	const [freeImage, setfreeImage] = useState('');
-	const handlefreeImage = (fileBlob) => {       
-		const reader = new FileReader();         
-		reader.readAsDataURL(fileBlob);
-		setImage(fileBlob);       
-		return new Promise((resolve) => {        
-			reader.onload = () => {         
-				setfreeImage(reader.result);          
+	const handlefreeImage = (fileBlob) => {
+		const reader = new FileReader();
+		if(fileBlob){
+			reader.readAsDataURL(fileBlob);
+			setImage(fileBlob);
+		}
+
+		return new Promise((resolve) => {
+			reader.onload = () => {
+				setfreeImage(reader.result);
 				resolve();
 			};
-		});
+		});	
 	};
 
 	const removeImg = () => {
@@ -54,54 +72,61 @@ function Survey(){
 		setfreeImage('')
 	}
 
-    const [Scale_Start, setScale_Start] = useState();
-    const handleScale_Start = (e) => {
-		if(!parseInt(e.target.value)){
-			setScale_Start(0)
-		}else{
-			setScale_Start(parseInt(e.target.value));
+	
+	const [Select_Image_1, setSelect_Image_1] = useState('');
+
+	const [freeImage1, setfreeImage1] = useState('');
+	const handlefreeImage1 = (fileBlob) => {       
+		const reader = new FileReader();         
+		reader.readAsDataURL(fileBlob);
+
+		setSelect_Image_1(fileBlob);       
+		return new Promise((resolve) => {        
+			reader.onload = () => {         
+				setfreeImage1(reader.result);          
+				resolve();
+			};
+		});
+	};
+
+	const removeSelectImg1 = () => {
+		setSelect_Image_1('')
+		setfreeImage1('')
+	}
+	const removeSelectImg2 = () => {
+		setSelect_Image_2('')
+		setfreeImage2('')
+	}
+	
+	const [Select_Image_2, setSelect_Image_2] = useState('');
+
+	const [freeImage2, setfreeImage2] = useState('');
+	const handlefreeImage2 = (fileBlob) => {       
+		const reader = new FileReader();         
+		reader.readAsDataURL(fileBlob);
+		
+		setSelect_Image_2(fileBlob);   
+		return new Promise((resolve) => {
+			reader.onload = () => {
+				setfreeImage2(reader.result);          
+				resolve();
+			};
+		});
+	};
+	
+	const [Point, setPoint] = useState(0);
+	const handleCheck2 = e => {
+		if(e.target.checked){
+			console.log("CHECK")
+			setPoint(1);
+		} else{
+			console.log("NO CHECK")
+			setPoint(0)
 		}
-    }
-
-    const [Scale_End, setScale_End] = useState();
-	const handleScale_End = (e) => {
-		if(!parseInt(e.target.value)){
-			setScale_End(0)
-		}else{
-			setScale_End(parseInt(e.target.value));
-		}
 	}
-
-    const [Scale_Unit, setScale_Unit] = useState();
-
-    const [Scale_Start_Text, setScale_Start_Text] = useState();
-    const handleScale_Start_Text = (e) => {
-        setScale_Start_Text(e.target.value);
-    }
-
-    const [Scale_Mid_Text, setScale_Mid_Text] = useState();
-	const handleScale_Mid_Text = (e) => {
-		setScale_Mid_Text(e.target.value);
-	}
-
-    const [Scale_End_Text, setScale_End_Text] = useState();
-	const handleScale_End_Text = (e) => {
-		setScale_End_Text(e.target.value);
-	}
-
-
-    const [check, setCheck] = useState(false);
-    const handlecheck = () => {
-        setCheck(!check)
-        if(!check){
-            setMax_Personnel(parseInt(999999))
-        }else{
-            setMax_Personnel(parseInt(0))
-        }
-    }
-
+		
 	const [State, setState] = useState(0);
-	const Checkhandler = e => {
+	const handleCheck = e => {
 		if(e.target.checked){
 			console.log("CHECK")
 			setState(1);
@@ -111,13 +136,31 @@ function Survey(){
 		}
 	}
 
-	const Type = 2;
+	// div 추가
+	const [countDiv, setCountDiv] = useState([0]);
+
+	const onAddDetailDiv = () => {	
+		let countArr = [...countDiv]
+		let counter = countArr.slice(-1)[0]
+
+		counter += 1;
+		countArr.push(counter)
+		setCountDiv(countArr)
+	}
+
+	const [check, setCheck] = useState(false);
+    const handlecheck = () => {
+        setCheck(!check)
+        if(!check){
+            setMax_Personnel(parseInt(999999))
+        }else{
+            setMax_Personnel(parseInt(0))
+        }
+    }
+
+	const Type = 0;
     const Max_Choice = 1;
     const Random = 0;
-	const Select_Image_1 = null;
-	const Select_1 = null;
-	const Select_Image_2 = null;
-	const Select_2 = null;
     const Select_Image_3 = null;
     const Select_3 =null;
     const Select_Image_4 = null;
@@ -130,33 +173,41 @@ function Survey(){
     const Select_7 =null;
     const Select_Image_8 = null;
     const Select_8 =null;
+
+    const Scale_start = 0;
+    const Scale_End = 0;
+    const Scale_Unit = 0;
+
+    const Scale_Start_Text = null;
+    const Scale_End_Text = null;
+    const Scale_Mid_Text = null;
 	const Is_Using_Others = 0;
 	const Regist_M_Idx = null;
 
+	//formData.append('files', )
+	formData.append('files', Image)
+	formData.append('files', Select_Image_1)
+	formData.append('files', Select_Image_2)
+	// for (let key of formData.keys()) {
+	// 		console.log(key);
+	// 	  }
+	// 	// FormData의 value 확인
+	//   for (let value of formData.values()) {
+	// 	console.log(value);
+	//   }
 	const onSubmitHandler = async(e) => {
 		e.preventDefault();
 
-	console.log("■■■■■■■■■■■■■■■■■■■■■■■■");
-	formData.append('files',Image)
-	console.log("■■■■■■■■■■■■■■■■■■■■■■■■");
-
-		// for (let key of formData.keys()) {
-		// 	console.log(key);
-		//   }
-		//   // FormData의 value 확인
-		//   for (let value of formData.values()) {
-		// 	console.log(value);
-		//   }
-   
-
 		 client.post('/uploads/fileups', formData).then((res) =>{
-			
+
+			console.log(res.data.returnValue.length);
+
+			console.log(res)
 			const Image = res.data.returnValue[0];
+			const Select_Image_1 = res.data.returnValue[1];
+			const Select_Image_2 = res.data.returnValue[2];
 			
-			console.log('data in one');
-			console.log(Image);
-			
-			 client.post('/primary-poll/create', {
+			client.post('/primary-poll/create', {
 				Title,
 				Image,
 				State,
@@ -172,9 +223,6 @@ function Survey(){
 			}).then(({data}) => {
 				const primaryPoll = data.Q_Idx;
 
-				console.log('data in two');
-				console.log(data.Q_Idx);
-				console.log(primaryPoll);
 				client.post('/primary-poll-item/create', {
 					primaryPoll,
 					Select_Image_1,
@@ -193,7 +241,7 @@ function Survey(){
 					Select_7,
 					Select_Image_8,
 					Select_8,
-					Scale_Start,
+					Scale_start,
 					Scale_End,
 					Scale_Unit,
 					Scale_Start_Text,
@@ -216,6 +264,13 @@ function Survey(){
 		alert("등록 되었습니다.");
         // document.location.href="/polltotallist";
 	};
+
+
+	//보기 이미지
+		const [isToggleOpen, setToggle] = useState(false);
+		const toggleImage = () => {
+			setToggle(isToggleOpen => !isToggleOpen);
+		}
     
     return (
 		<>
@@ -226,20 +281,20 @@ function Survey(){
 						<div className="item">
 							<p className="title">퀘스트 제목을 입력해주세요.<i></i></p>
 							<div className="desc">
-								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." onChange={e => setTitle(e.target.value)}/></div>
+								<div><input type="text" id="" name="" placeholder="퀘스트 제목을 입력해주세요." /></div>
 								<p className="comment">30자 이내로 적어주세요.</p>
 							</div>
 						</div>
 						<div className="item">
-							<p className="title">지급 포인트를 입력해주세요.</p>
+							<p className="title">지급 포인트를 입력해주세요.<i></i></p>
 							<div className="desc">
 								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트1" />
 								<span className="txt">~</span>
-								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트2" />
+								<input type="text" className="w180" onChange={handleRewards} placeholder="포인트2" readOnly={!Point ? false : true} />
 								<span className="txt">P</span>
 
 								<div className="rightB">
-									<input type="checkbox" id="agr-chk" name="" /><label for="agr-chk">범위 입력</label>
+									<input type="checkbox" id="agr-chk" name="" onClick={handleCheck2} /><label for="agr-chk">범위 입력</label>
 								</div>
 							</div>
 						</div>
@@ -283,12 +338,19 @@ function Survey(){
 										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
 										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
 									</li>
-									<li>
-										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
-										<input type="text" id="" name="" placeholder="유의사항5 입력" />
-									</li>
+									<AddDiv
+										countDiv={countDiv}
+										setSelect_1={setSelect_1}
+										setSelect_2={setSelect_2}
+										setSelect_Image_1={setSelect_Image_1}
+										setSelect_Image_2={setSelect_Image_2}
+										setfreeImage1={setfreeImage1}
+										setfreeImage2={setfreeImage2}
+									/>
 								</ul>
-								<a href="#" class="btn-add">유의사항 추가</a>
+
+								{countDiv.length - 1 < 7 ? <button className="btn-add" onClick={onAddDetailDiv}>유의사항 추가</button> : false}
+
 							</div>
 						</div>
 						<div className="item">
@@ -370,31 +432,19 @@ function Survey(){
 									<input
 										type="date"
 										className="form-control end-date date"
+										readOnly={!check ? false : true}
 										format="yyyy-MM-dd"
 										name="datepicker"
 										min={new Date().toISOString().slice(0, 10)}
-                  						value={End_Date || ''}
+                  	value={End_Date || ''}
 										placehoder="퀘스트 종료일"
 										locale={ko}
 										onChange={(e) => setEnd_Date(e.target.value)}
+										
 									/>
-
-									{/* <DatePicker
-										className="form-control end-date date"
-										selected={End_Date}
-										onChange={date => setEnd_Date(date)}
-										selectsEnd
-										startDate={Start_Date}
-										endDate={End_Date}
-										minDate={Start_Date}
-										locale={ko}
-										dateFormat="yyyy년 MM월 dd일 (eee)"
-										placeholderText="퀘스트 종료일"
-										closeOnScroll={true}
-									/> */}
-									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간"/>
+									<input type="text" className="timepicker clock" name="timepicker" placeholder="시간" readOnly={!check ? false : true} />
 									<div class="rightB">
-										<input type="checkbox" id="date-chk" name="" /><label for="date-chk">기한 없음</label>
+										<input type="checkbox" id="date-chk" name="" onClick={handlecheck} /><label for="date-chk">기한 없음</label>
 									</div>
 								</div>
 							</div>
@@ -404,7 +454,7 @@ function Survey(){
 							<div className="desc">
 								<div>
 									<span className="txt">총</span>
-									<input type="text" className={!check ? "txtR" : "txtR no"} value={Max_Personnel || ''} onChange={handleMax_Personnel} readOnly={!check ? false : true}/>
+									<input type="text" className="txtR" />
 									<span className="txt">명</span>
 									<div className="rightB">
 										<input type="checkbox" id="panel-chk" name="" /><label for="panel-chk">패널 전용</label>
@@ -532,7 +582,7 @@ function Survey(){
 								<div className="box-wrap">
 									<div className="box draggable" draggable="true">
 										<div className="tit img-photo-wrap">
-											<input type="text" id="" name="" placeholder="질문을 입력해주세요." />
+											<input type="text" id="" name="" placeholder="질문을 입력해주세요." onChange={e => setTitle(e.target.value)} />
 											<div className="img-photo">
 												<Dropzone onDrop={acceptedFiles => {
 													console.log(acceptedFiles)
@@ -576,32 +626,61 @@ function Survey(){
 									<div className="box draggable" draggable="true">
 										<div className="tit">
 											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
-												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." onChange={handleSelect_Text_1} />
+												{/* <label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label> */}
+												<label id="btnAtt2"><span onClick={()=>toggleImage()}>이미지 추가</span></label>
 											</p>
-											<select>
-												<option value="자격">자격</option>
-												<option value="실격">실격</option>
-											</select>
 											<a href="#" className="btn-del">삭제</a>
 										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
+										<div className={isToggleOpen ? "img-photo on" : "img-photo off"}>
+											<div className="boxs boxsone">
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setSelect_Image_1(acceptedFiles[0]);
+													handlefreeImage1(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage1 ? <div id="photo-view">
+													<img className="preview-img" src={freeImage1} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeSelectImg1}/>
+												</div> : null}
+												<p className="comment">권장 크기: 1,000 x 1,000</p>
+											</div>
+										</div>
 									</div>
 									<div className="box draggable" draggable="true">
 										<div className="tit">
 											<p>
-												<input type="text" id="" name="" placeholder="보기를 입력해주세요." />
+												<input type="text" id="" name="" placeholder="보기를 입력해주세요." onChange={handleSelect_Text_2} />
 												<label id='btnAtt2'><input type='file' multiple='multiple' />이미지 추가</label>
 											</p>
-											<select>
-												<option value="자격">자격</option>
-												<option value="실격">실격</option>
-											</select>
 											<a href="#" className="btn-del">삭제</a>
 										</div>
-										<div className="cont"><div id="photo-view2"></div></div>
-										<p className="comment">권장 크기 : 1,000 x 1,000</p>
+										<div className={isToggleOpen ? "img-photo on" : "img-photo off"}>
+											<div className="boxs">
+												<Dropzone onDrop={acceptedFiles => {
+													console.log(acceptedFiles)
+													setSelect_Image_2(acceptedFiles[0]);
+													handlefreeImage2(acceptedFiles[0]);
+													}}>
+													{({getRootProps, getInputProps}) => (
+														<div id="btnAtt" {...getRootProps()}>
+															<input {...getInputProps()} />
+														</div>      
+													)}
+												</Dropzone>
+												{freeImage2 ? <div id="photo-view">
+													<img className="preview-img" src={freeImage2} alt="preview-img"/>
+													<input type="button" value="X" className="deleteImg" onClick={removeSelectImg2}/>
+												</div> : null}
+												<p className="comment">권장 크기: 1,000 x 1,000</p>
+											</div>
+										</div>
 									</div>
 								</div>
 								<a href="#" className="btn-add">객관식 문항 추가</a>
@@ -629,7 +708,7 @@ function Survey(){
 										</div>}
 									<div className="choose">
 										<section className="top">
-											<div className="starttop">{Scale_Start}</div>
+											<div className="starttop">{}</div>
 											<div className="endtop">{Scale_End}</div>
 										</section>
 										<section className="progress-bar"></section>

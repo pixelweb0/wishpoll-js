@@ -32,8 +32,8 @@
 #media_write .item .accordion {margin-top:20px; overflow:hidden; border:1px solid #e8e8e8; background:#f7f9fb;}
 #media_write .item .accordion .title {display:block; width:auto; height:auto; line-height:64px; padding:0 20px; border-bottom:0;}
 #media_write .item .accordion .title:before, #media_write .item .accordion .title:after {display:none;}
-#media_write .item .accordion i {position:absolute; top:50%; right:10px; transform:translateY(-50%);}
-#media_write .item .accordion i:before {position:absolute; right:10px; transform:rotate(-45deg); width:10px; height:10px; border-top:2px solid #333; border-right:2px solid #333; content:'';}
+#media_write .item .accordion i {position:absolute; top:50%; right:20px; transform:translateY(-50%); width:20px; height:20px;}
+#media_write .item .accordion i:before {position:absolute; top:3px; right:5px; transform:rotate(45deg); width:10px; height:10px; border-bottom:2px solid #333; border-right:2px solid #333; content:'';}
 #media_write .item .accordion input[type=checkbox]:checked + label i {right:40px; transform:translateY(-50%) rotate(180deg);}
 #media_write .item .accordion input[type=checkbox]:checked + label + .desc {max-height:1000px; padding:20px 30px; border-top:1px solid #e8e8e8;}
 #media_write .item .accordion .desc {height:100%; max-height:0; padding:0; overflow:hidden; transition:max-height .5s ease-in-out;}
@@ -85,9 +85,10 @@
 #media_write .preview {text-align:center; border: 1xp solid #333;}
 #media_write .preview h4 {font-family: 'scdream6'; font-size:1.25rem; margin:auto 30px;}
 #media_write .preview .phone {position:relative; max-width:360px; height:46rem; max-height:730px; margin:0 auto; padding:1.3vh 1vw 1.5vh; background:url(../../../../../img/img_phone.svg) top center no-repeat; background-size:100%;}
-#media_write .preview .phone .desc {height:100%; max-height:690px; display: flex; justify-content: center; align-items: center;}
+#media_write .preview .phone .desc {height:100%; max-height:690px; display: flex; justify-content: center; align-items:top;}
 
-#media_write .preview .phone .desc .modal{box-shadow: 1px 1px 5px #d1d1d1; width: 17rem; border-radius: 15px;}
+#media_write .preview .phone .desc .modal{width: 17rem; height:18rem; margin-bottom:10rem; border-radius: 15px;}
+#media_write .preview .phone .desc .modal h2 {font-family:'scdream5'; font-size:0.875rem; line-height:3.5; border-bottom:2px solid #ddd;}
 #media_write .preview .phone .desc .modal .title{font-weight: bold; display: flex; margin: 10px 8px 5px 10px; font-size: 11px;}
 #media_write .preview .phone .desc .modal img{ width: 7rem; height: 5rem; border-radius: 10px;}
 #media_write .preview .phone .desc .modal ul.info{display: flex; justify-content: space-around; margin: 5px; align-items: center;  font-size: 10px;}
@@ -112,7 +113,7 @@
 #media_write .item .box-wrap #btnAtt2 { position: absolute; right:0.5rem; top:50%; transform:translateY(-50%); width: auto; height: auto; font-size: 0.875rem; color: #fff; line-height: 36px; text-align: center; padding: 0 10px; border-radius: 5px; background: #c684ff; background-size: 20px; cursor: pointer;}
 #media_write .item .box-wrap #btnAtt2:hover{background: #b46ef0; transition: all 0.5s;}
 #media_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move;}
-#media_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; font-weight: bold; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
+#media_write .item .desc button.btn-add { display: block; font-family: 'scdream5'; width: 100%; line-height: 54px; color: #c684ff; text-align: center; margin-top: 10px; border: 1px solid #c684ff; background: none; cursor: pointer;}
 #media_write .item .box-wrap .box { padding: 20px; margin-bottom: -1px; border: 1px solid #e8e8e8; background-size: 20px auto; z-index: 0;}
 #media_write .item .box-wrap .box.draggable {padding:20px; margin-bottom:-1px; border:1px solid #e8e8e8; background:url(/src/img/ico_menu.svg) top 35px right 20px no-repeat; background-size:20px auto; cursor:move; z-index:0;}
 #media_write .item .box-wrap .box.draggable .tit a {position:absolute; top:13px; right:40px; width:20px; height:20px; text-indent:-999em; background:url(/src/img/ico_del.svg) no-repeat; background-size:auto 100%;}

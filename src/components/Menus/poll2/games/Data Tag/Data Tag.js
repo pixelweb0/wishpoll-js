@@ -4,10 +4,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import {ko} from 'date-fns/esm/locale';
 import client from "../../../../client";
 import "./DataTag.css";
+import AddDiv from "./AddDivNote";
 import Dropzone from 'react-dropzone';
 
 function TagData(){
+	// 파일 업로드를 위한  폼데이터 
 	const formData = new FormData();
+
+		const [Select_1, setSelect_1] = useState(null);
+    const [Select_2, setSelect_2] = useState(null);
+
+    const [Select_Image_1, setSelect_Image_1] = useState(null);
+    const [Select_Image_2, setSelect_Image_2] = useState(null);
 
     const [Start_Date, setStart_Date] = useState(null);
 	const [End_Date, setEnd_Date] = useState(null);
@@ -65,6 +73,28 @@ function TagData(){
 			setState(0)
 		}
 	}
+	
+	// div 추가
+	const [countDiv, setCountDiv] = useState([0]);
+
+	const onAddDetailDiv = () => {	
+		let countArr = [...countDiv]
+		let counter = countArr.slice(-1)[0]
+
+		counter += 1;
+		countArr.push(counter)
+		setCountDiv(countArr)
+	}
+
+	const onRemove = (targetId) => {
+		console.log(`${targetId.i}가 삭제됩니다`)
+
+		let countArr = [...countDiv]
+
+		const newDiaryList = countArr.filter(countDiv => countDiv !== targetId.i);
+
+		setCountDiv(newDiaryList);
+	};
 
 	const [check, setCheck] = useState(false);
     const handlecheck = () => {
@@ -79,22 +109,6 @@ function TagData(){
 	const Type = 6;
     const Max_Choice = 1;
     const Random = 0;
-	const Select_Image_1 = null;
-	const Select_1 = null;
-	const Select_Image_2 = null;
-	const Select_2 = null;
-    const Select_Image_3 = null;
-    const Select_3 =null;
-    const Select_Image_4 = null;
-    const Select_4 =null;
-    const Select_Image_5 = null;
-    const Select_5 =null;
-    const Select_Image_6 = null;
-    const Select_6 =null;
-    const Select_Image_7 = null;
-    const Select_7 =null;
-    const Select_Image_8 = null;
-    const Select_8 =null;
 
     const Scale_start = 0;
     const Scale_End = 0;
@@ -154,18 +168,6 @@ function TagData(){
 					Select_1,
 					Select_Image_2,
 					Select_2,
-					Select_Image_3,
-					Select_3,
-					Select_Image_4,
-					Select_4,
-					Select_Image_5,
-					Select_5,
-					Select_Image_6,
-					Select_6,
-					Select_Image_7,
-					Select_7,
-					Select_Image_8,
-					Select_8,
 					Scale_start,
 					Scale_End,
 					Scale_Unit,
@@ -182,8 +184,6 @@ function TagData(){
 		}).catch(err =>{
 			alert('파일 업로드 실패 - 관리자에게 문의하세요');
 		})
-		
-		
 		
 
 		alert("등록 되었습니다.");
@@ -250,12 +250,17 @@ function TagData(){
 										<span><input type="checkbox" id="normal-4" name="" /><label for="normal-4"></label></span>
 										<input type="text" id="" name="" placeholder="본 퀘스트는 당사 상황에 따라 사전 고지 없이 세부내용이 변경되거나 종료될 수 있습니다." />
 									</li>
-									<li>
-										<span><input type="checkbox" id="normal-5" name="" /><label for="normal-5"></label></span>
-										<input type="text" id="" name="" placeholder="유의사항5 입력" />
-									</li>
 								</ul>
-								<a href="#" class="btn-add">유의사항 추가</a>
+								<AddDiv
+									countDiv={countDiv}
+									setSelect_1={setSelect_1}
+									setSelect_2={setSelect_2}
+									setSelect_Image_1={setSelect_Image_1}
+									setSelect_Image_2={setSelect_Image_2}
+								/>
+
+								{countDiv.length - 1 < 7 ? <button className="btn-add" onClick={onAddDetailDiv}>유의사항 추가</button> : false}
+
 							</div>
 						</div>
 						<div className="item">
